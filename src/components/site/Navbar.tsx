@@ -55,15 +55,17 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 dark:bg-[#080d1a]/85 border-b border-slate-200 dark:border-white/[0.08] transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        {/* Brand Logo */}
+        {/* Brand Logo - IIDEA */}
         <Link href="/" className="flex items-center gap-2 sm:gap-3.5 group">
-          <div className="w-11 h-11 relative group-hover:scale-105 transition-transform flex-shrink-0">
-            <Image src="/logo.png" alt="IIDEA" width={44} height={44} className="object-contain" priority />
-          </div>
           <div className="flex flex-col whitespace-nowrap">
-            <span className="text-base sm:text-xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-[#ff9500] to-[#f59e0b] dark:from-white dark:via-orange-300 dark:to-[#ff9500] bg-clip-text text-transparent font-display">
-              ACADEMY
-            </span>
+            <div className="flex items-baseline gap-0">
+              <span className="text-xl sm:text-2xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-[#ff9500] to-[#f59e0b] dark:from-orange-400 dark:via-orange-300 dark:to-orange-500 bg-clip-text text-transparent font-display">
+                IIDEA
+              </span>
+              <span className="text-xs sm:text-sm font-bold tracking-wide text-slate-600 dark:text-slate-300 ml-1">
+                Academy
+              </span>
+            </div>
             <span className="text-[9px] sm:text-[10px] tracking-wide text-slate-500 dark:text-slate-400 font-semibold">
               Escuela de capacitación
             </span>

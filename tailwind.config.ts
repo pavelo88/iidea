@@ -11,8 +11,8 @@ const config: Config = {
     extend: {
       colors: {
         finix: {
-          blue: "#0a6ed1",
-          darkblue: "#003b75",
+          blue: "#ff9500",
+          darkblue: "#f59e0b",
           navy: "#0d1b2a",
           gold: "#f59e0b",
           goldhover: "#d97706",
