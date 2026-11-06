@@ -201,20 +201,27 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#080d1a] selection:bg-finix-blue selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#09090f] selection:bg-orange-500 selection:text-white">
+      {/* Cosmic background orbs */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-orange-500/10 blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-purple-700/15 blur-[100px]" />
+        <div className="absolute top-[40%] right-[20%] w-[300px] h-[300px] rounded-full bg-orange-400/5 blur-[80px]" />
+      </div>
+
       <Navbar />
 
-      <main className="flex-1 flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
+      <main className="relative flex-1 flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8">
           {/* Header */}
           <div className="text-center space-y-2">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-finix-blue/30 bg-finix-blue/5 text-xs font-bold text-finix-blue">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-orange-500/30 bg-orange-500/5 text-xs font-bold text-orange-400">
               <ShieldCheck className="w-3.5 h-3.5" /> Portal Oficial IIDEA Academy Ecuador
             </div>
-            <h1 className="text-3xl font-extrabold text-slate-900 dark:text-white font-display tracking-tight">
+            <h1 className="text-3xl font-extrabold text-white font-display tracking-tight">
               {tab === "login" ? "Iniciar Sesion" : "Registro Gratuito"}
             </h1>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+            <p className="text-xs sm:text-sm text-slate-400">
               {tab === "login"
                 ? "Accede a tu Aula Virtual, expediente academico o panel de administracion."
                 : "Crea tu cuenta y comienza tu formación en SAP Business One en IIDEA Academy hoy mismo."}
@@ -222,13 +229,13 @@ export default function LoginPage() {
           </div>
 
           {/* Tab Switcher */}
-          <div className="flex rounded-2xl border border-slate-200 dark:border-white/10 p-1 bg-slate-100 dark:bg-white/[0.03] gap-1">
+          <div className="flex rounded-2xl border border-white/10 p-1 bg-white/[0.03] gap-1">
             <button
               onClick={() => switchTab("login")}
               className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                 tab === "login"
-                  ? "bg-white dark:bg-finix-blue text-finix-blue dark:text-white shadow-sm"
-                  : "text-slate-500 hover:text-slate-700 dark:hover:text-slate-300"
+                  ? "bg-gradient-to-r from-orange-500 to-purple-600 text-white shadow-lg shadow-orange-500/20"
+                  : "text-slate-400 hover:text-white"
               }`}
             >
               <User className="w-3.5 h-3.5" />
@@ -238,8 +245,8 @@ export default function LoginPage() {
               onClick={() => switchTab("register")}
               className={`flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                 tab === "register"
-                  ? "bg-white dark:bg-finix-blue text-finix-blue dark:text-white shadow-sm"
-                  : "text-slate-500 hover:text-slate-700 dark:hover:text-slate-300"
+                  ? "bg-gradient-to-r from-orange-500 to-purple-600 text-white shadow-lg shadow-orange-500/20"
+                  : "text-slate-400 hover:text-white"
               }`}
             >
               <UserPlus className="w-3.5 h-3.5" />
@@ -249,7 +256,7 @@ export default function LoginPage() {
 
           {/* LOGIN FORM */}
           {tab === "login" && (
-            <div className="p-8 rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.02] shadow-xl space-y-6">
+            <div className="p-8 rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-2xl shadow-black/40 space-y-6">
               {(errorMsg || avisoSesion) && (
                 <div role="alert" className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-600 dark:text-rose-400 text-xs flex items-center gap-2.5 animate-in fade-in">
                   <AlertCircle className="w-4 h-4 shrink-0" />
@@ -265,7 +272,7 @@ export default function LoginPage() {
 
               <form onSubmit={handleLogin} className="space-y-4">
                 <div className="space-y-1.5">
-                  <label htmlFor="login-email" className="text-xs font-bold text-slate-700 dark:text-slate-300">
+                  <label htmlFor="login-email" className="text-xs font-bold text-slate-200">
                     Correo Electronico
                   </label>
                   <div className="relative">
@@ -277,17 +284,17 @@ export default function LoginPage() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="ejemplo@empresa.com"
                       required
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-finix-blue transition-colors"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-white/10 bg-white/5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500/30 transition-colors"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
                   <div className="flex justify-between items-center">
-                    <label htmlFor="login-password" className="text-xs font-bold text-slate-700 dark:text-slate-300">
+                    <label htmlFor="login-password" className="text-xs font-bold text-slate-200">
                       Contrasena / Cedula
                     </label>
-                    <span className="text-[11px] text-slate-400">
+                    <span className="text-[11px] text-slate-500">
                       (Tu contraseña personal)
                     </span>
                   </div>
@@ -300,7 +307,7 @@ export default function LoginPage() {
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Tu contraseña"
                       required
-                      className="w-full pl-10 pr-10 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-finix-blue transition-colors"
+                      className="w-full pl-10 pr-10 py-3 rounded-xl border border-white/10 bg-white/5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500/30 transition-colors"
                     />
                     <button
                       aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
@@ -313,7 +320,7 @@ export default function LoginPage() {
                   </div>
                 </div>
 <div className="text-right">
-  <button type="button" onClick={handleForgotPassword} className="text-finix-blue hover:underline text-xs mt-1">
+  <button type="button" onClick={handleForgotPassword} className="text-orange-400 hover:text-orange-300 hover:underline text-xs mt-1">
     ¿Olvidaste tu contraseña?
   </button>
 </div>
@@ -332,7 +339,7 @@ export default function LoginPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 px-4 rounded-xl bg-finix-blue hover:bg-sky-600 text-white text-xs font-bold transition-all shadow-md shadow-finix-blue/20 flex items-center justify-center gap-2 cursor-pointer active:scale-95 disabled:opacity-50"
+                  className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-400 hover:to-purple-500 text-white text-xs font-bold transition-all shadow-lg shadow-orange-500/25 flex items-center justify-center gap-2 cursor-pointer active:scale-95 disabled:opacity-50"
                 >
                   {loading ? (
                     <span>Autenticando...</span>
@@ -346,11 +353,11 @@ export default function LoginPage() {
               </form>
 
               <div className="pt-2 text-center">
-                <p className="text-[11px] text-slate-500">
+                <p className="text-[11px] text-slate-400">
                   No tienes cuenta?{" "}
                   <button
                     onClick={() => switchTab("register")}
-                    className="text-finix-blue font-bold hover:underline cursor-pointer"
+                    className="text-orange-400 font-bold hover:text-orange-300 hover:underline cursor-pointer"
                   >
                     Registrate gratis
                   </button>
@@ -361,7 +368,7 @@ export default function LoginPage() {
 
           {/* REGISTER FORM */}
           {tab === "register" && (
-            <div className="p-8 rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.02] shadow-xl space-y-6">
+            <div className="p-8 rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-2xl shadow-black/40 space-y-6">
               {/* Free badge */}
               <div className="flex items-center gap-3 p-4 rounded-2xl bg-emerald-500/5 border border-emerald-500/20">
                 <GraduationCap className="w-8 h-8 text-emerald-500 shrink-0" />
@@ -393,7 +400,7 @@ export default function LoginPage() {
 
               <form onSubmit={handleRegister} className="space-y-4">
                 <div className="space-y-1.5">
-                  <label htmlFor="register-name" className="text-xs font-bold text-slate-700 dark:text-slate-300">
+                  <label htmlFor="register-name" className="text-xs font-bold text-slate-200">
                     Nombre Completo *
                   </label>
                   <div className="relative">
@@ -405,13 +412,13 @@ export default function LoginPage() {
                       onChange={(e) => setRegName(e.target.value)}
                       placeholder="Ej: Ing. Andrea Morales"
                       required
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-finix-blue transition-colors"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-white/10 bg-white/5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500/30 transition-colors"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label htmlFor="register-email" className="text-xs font-bold text-slate-700 dark:text-slate-300">
+                  <label htmlFor="register-email" className="text-xs font-bold text-slate-200">
                     Correo Electronico *
                   </label>
                   <div className="relative">
@@ -423,13 +430,13 @@ export default function LoginPage() {
                       onChange={(e) => setRegEmail(e.target.value)}
                       placeholder="tucorreo@empresa.com"
                       required
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-finix-blue transition-colors"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-white/10 bg-white/5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500/30 transition-colors"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label htmlFor="register-password" className="text-xs font-bold text-slate-700 dark:text-slate-300">
+                  <label htmlFor="register-password" className="text-xs font-bold text-slate-200">
                     Contraseña personal * <span className="font-normal text-slate-400">(mínimo 8 caracteres)</span>
                   </label>
                   <div className="relative">
@@ -445,13 +452,13 @@ export default function LoginPage() {
                       minLength={8}
                       maxLength={128}
                       required
-                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-finix-blue transition-colors font-mono"
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border border-white/10 bg-white/5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500/30 transition-colors font-mono"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label htmlFor="register-phone" className="text-xs font-bold text-slate-700 dark:text-slate-300">
+                  <label htmlFor="register-phone" className="text-xs font-bold text-slate-200">
                     Telefono / WhatsApp <span className="font-normal text-slate-400">(opcional)</span>
                   </label>
                   <input
@@ -460,7 +467,7 @@ export default function LoginPage() {
                     value={regPhone}
                     onChange={(e) => setRegPhone(e.target.value)}
                     placeholder="0991234567"
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-finix-blue transition-colors"
+                    className="w-full px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500/30 transition-colors"
                   />
                 </div>
 
@@ -476,9 +483,9 @@ export default function LoginPage() {
                   />
                   <span>
                     Acepto los{" "}
-                    <button type="button" onClick={(e) => { e.preventDefault(); setPolitica("/terminos"); }} className="text-finix-blue underline">Términos y condiciones</button>{" "}
+                    <button type="button" onClick={(e) => { e.preventDefault(); setPolitica("/terminos"); }} className="text-orange-400 underline hover:text-orange-300">Términos y condiciones</button>{" "}
                     y autorizo el tratamiento de mis datos personales, necesarios para mi cuenta, según la{" "}
-                    <button type="button" onClick={(e) => { e.preventDefault(); setPolitica("/privacidad"); }} className="text-finix-blue underline">Política de privacidad</button>.
+                    <button type="button" onClick={(e) => { e.preventDefault(); setPolitica("/privacidad"); }} className="text-orange-400 underline hover:text-orange-300">Política de privacidad</button>.
                   </span>
                 </label>
 
@@ -515,7 +522,7 @@ export default function LoginPage() {
                   Ya tienes cuenta?{" "}
                   <button
                     onClick={() => switchTab("login")}
-                    className="text-finix-blue font-bold hover:underline cursor-pointer"
+                    className="text-orange-400 font-bold hover:text-orange-300 hover:underline cursor-pointer"
                   >
                     Inicia sesion
                   </button>

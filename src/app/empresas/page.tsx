@@ -20,7 +20,7 @@ export default function EmpresasPage() {
           <span className="inline-flex items-center gap-2 rounded-full border border-sky-500/30 px-3 py-1 text-xs font-bold text-finix-blue dark:text-sky-300"><Building2 className="h-4 w-4" /> Para equipos de pymes</span>
           <h1 className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Formación ERP para aprender procesos completos</h1>
           <p className="text-base leading-relaxed text-slate-600 dark:text-slate-300">Las rutas de IIDEA Academy permiten estudiar funciones empresariales y practicar en un entorno separado de los sistemas reales. Elige las áreas relevantes para tu equipo y revisa el temario antes de comenzar.</p>
-          <Link href="#solicitud" className="inline-flex items-center gap-2 rounded-xl bg-finix-blue px-6 py-3 text-sm font-bold text-white hover:bg-sky-600">Solicitar capacitación <ArrowRight className="h-4 w-4" /></Link>
+          <Link href="#solicitud" className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-400 hover:to-purple-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-orange-500/25 transition-all active:scale-95">Solicitar capacitación <ArrowRight className="h-4 w-4" /></Link>
         </div>
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {[

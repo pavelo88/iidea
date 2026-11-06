@@ -79,7 +79,7 @@ export default function MiAulaPage() {
           </h1>
           <div className="flex flex-wrap gap-2 pt-2">
             <Link href="/simulador" className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-[#131a20] border border-slate-200 dark:border-gray-800 text-xs font-semibold hover:border-amber-500/50 transition-all active:scale-95">
-              <Wrench className="w-4 h-4 text-blue-500" aria-hidden="true" /> Simulador Finix ERP
+              <Wrench className="w-4 h-4 text-orange-500" aria-hidden="true" /> Simulador Finix ERP
             </Link>
             <Link href="/verificar" className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-[#131a20] border border-slate-200 dark:border-gray-800 text-xs font-semibold hover:border-amber-500/50 transition-all active:scale-95">
               <ShieldCheck className="w-4 h-4 text-emerald-500" aria-hidden="true" /> Verificar un certificado
@@ -88,17 +88,17 @@ export default function MiAulaPage() {
         </header>
 
         {/* RUTA COMERCIAL & VENTAS ERP (FAST-TRACK) */}
-        <section aria-labelledby="ruta-comercial" className="rounded-3xl border-2 border-blue-500/50 bg-gradient-to-r from-blue-900/20 via-slate-900/40 to-amber-900/20 bg-white dark:bg-[#131a20] p-6 sm:p-8 shadow-xl flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+        <section aria-labelledby="ruta-comercial" className="rounded-3xl border-2 border-orange-500/50 bg-gradient-to-r from-orange-900/20 via-slate-900/40 to-purple-900/20 dark:bg-[#131a20] p-6 sm:p-8 shadow-xl flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="flex items-start gap-4">
-            <div className="h-14 w-14 shrink-0 rounded-2xl bg-blue-500/20 flex items-center justify-center border border-blue-500/40 text-blue-500 dark:text-blue-400">
+            <div className="h-14 w-14 shrink-0 rounded-2xl bg-orange-500/20 flex items-center justify-center border border-orange-500/40 text-orange-500 dark:text-orange-400">
               <Sparkles className="w-7 h-7" aria-hidden="true" />
             </div>
             <div className="space-y-2 max-w-3xl">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-blue-500 text-white dark:text-slate-950 shadow-sm">
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-gradient-to-r from-orange-500 to-purple-600 text-white shadow-sm">
                   Ruta Comercial · Acceso Directo
                 </span>
-                <span className="text-xs font-semibold text-blue-600 dark:text-blue-400">
+                <span className="text-xs font-semibold text-orange-500 dark:text-orange-400">
                   4 Clases Magistrales · 2.5 Horas · 20 Misiones Corporativas
                 </span>
               </div>
@@ -127,16 +127,16 @@ export default function MiAulaPage() {
           <div className="flex flex-col sm:flex-row lg:flex-col gap-2.5 shrink-0">
             <Link
               href="/mi-aula/mod-ventas"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold shadow-lg shadow-blue-600/30 transition-all active:scale-95 text-center"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-400 hover:to-purple-500 text-white text-sm font-bold shadow-lg shadow-orange-500/30 transition-all active:scale-95 text-center"
             >
               <PlayCircle className="w-4 h-4" aria-hidden="true" />
               Iniciar 4 Clases de Ventas
             </Link>
             <Link
               href="/presentacion-comercial"
-              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-white dark:bg-gray-800 border border-blue-500/40 hover:border-blue-500 text-slate-800 dark:text-gray-200 text-xs font-semibold transition-all active:scale-95 text-center"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-white dark:bg-gray-800 border border-orange-500/40 hover:border-orange-500 text-slate-800 dark:text-gray-200 text-xs font-semibold transition-all active:scale-95 text-center"
             >
-              <Sparkles className="w-3.5 h-3.5 text-blue-500" aria-hidden="true" />
+              <Sparkles className="w-3.5 h-3.5 text-orange-500" aria-hidden="true" />
               Presentación para Clientes (Pitch Deck)
             </Link>
             <Link

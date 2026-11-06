@@ -127,9 +127,9 @@ export function Navbar() {
                       key={link.href}
                       href={link.href}
                       role="menuitem"
-                      className={`flex min-h-[44px] items-center gap-2.5 px-4 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-finix-blue ${isActive
-                        ? 'text-finix-blue dark:text-sky-400 bg-slate-50 dark:bg-white/5 font-bold'
-                        : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-white/5 hover:text-finix-blue dark:hover:text-sky-300'}`}
+                      className={`flex min-h-[44px] items-center gap-2.5 px-4 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-orange-500 ${isActive
+                        ? 'text-orange-500 bg-white/5 font-bold'
+                        : 'text-slate-600 dark:text-slate-300 hover:bg-white/5 hover:text-orange-500'}`}
                     >
                       <Icon className="w-4 h-4" />
                       <span>{link.name}</span>
@@ -149,9 +149,9 @@ export function Navbar() {
             <div className="flex items-center gap-2">
               <Link
                 href={isSuperOrAdmin ? "/admin" : "/dashboard"}
-                className="hidden sm:flex items-center gap-2 py-2 px-3 rounded-xl border border-slate-200 dark:border-white/10 hover:border-finix-blue text-xs font-semibold text-slate-800 dark:text-slate-200"
+                className="hidden sm:flex items-center gap-2 py-2 px-3 rounded-xl border border-slate-200 dark:border-white/10 hover:border-orange-500 text-xs font-semibold text-slate-800 dark:text-slate-200"
               >
-                <div className="w-5 h-5 rounded-md bg-finix-blue text-white flex items-center justify-center text-[10px] font-bold">
+                <div className="w-5 h-5 rounded-md bg-orange-500 text-white flex items-center justify-center text-[10px] font-bold">
                   {(userProfile.name || 'U').charAt(0)}
                 </div>
                 <span className="line-clamp-1 max-w-[120px]">{userProfile.name?.split(' ')[0]}</span>
@@ -203,7 +203,7 @@ export function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 text-sm font-semibold text-slate-700 dark:text-slate-200"
               >
-                <Icon className="w-4 h-4 text-finix-blue" />
+                <Icon className="w-4 h-4 text-orange-500" />
                 <span>{link.name}</span>
               </Link>
             );
@@ -220,7 +220,7 @@ export function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 text-sm font-semibold text-slate-700 dark:text-slate-200"
                 >
-                  <Icon className="w-4 h-4 text-finix-blue" />
+                  <Icon className="w-4 h-4 text-orange-500" />
                   <span>{link.name}</span>
                 </Link>
               );
@@ -243,7 +243,7 @@ export function Navbar() {
               <Link
                 href="/login"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full text-center py-2.5 rounded-xl bg-finix-blue text-white text-xs font-bold"
+                className="w-full text-center py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-purple-600 text-white text-xs font-bold"
               >
                 Iniciar Sesión
               </Link>

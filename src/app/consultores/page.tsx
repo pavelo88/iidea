@@ -20,7 +20,7 @@ export default function ConsultoresPage() {
           <span className="inline-flex items-center gap-2 rounded-full border border-sky-500/30 px-3 py-1 text-xs font-bold text-finix-blue dark:text-sky-300"><BadgeCheck className="h-4 w-4" /> Verificación de IIDEA Academy</span>
           <h1 className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Comprueba una constancia antes de confiar en ella</h1>
           <p className="text-base leading-relaxed text-slate-600 dark:text-slate-300">Si una persona te presenta una constancia emitida por IIDEA Academy, usa el código impreso para consultar su autenticidad. La consulta confirma el documento; no sustituye una entrevista ni acredita experiencia laboral externa.</p>
-          <Link href="/verificar" className="inline-flex items-center gap-2 rounded-xl bg-finix-blue px-6 py-3 text-sm font-bold text-white hover:bg-sky-600">Verificar por código <ArrowRight className="h-4 w-4" /></Link>
+          <Link href="/verificar" className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-400 hover:to-purple-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-orange-500/25 transition-all active:scale-95">Verificar por código <ArrowRight className="h-4 w-4" /></Link>
         </div>
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           <section className="rounded-2xl border border-slate-200 bg-white p-7 dark:border-white/10 dark:bg-white/[0.03]">
