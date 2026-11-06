@@ -60,105 +60,217 @@ export default function HomePage() {
       <Navbar />
 
       <main className="flex-1">
-        {/* HERO SECTION - Nuevo diseño con imagen a la derecha + Animated Background */}
-        <section className="relative bg-gradient-to-br from-orange-500 via-orange-400 to-purple-900 dark:from-orange-600 dark:via-purple-800 dark:to-black overflow-hidden flex items-center min-h-fit py-8 sm:py-12">
-          <style dangerouslySetInnerHTML={{ __html: '.svg-line { stroke: rgba(255,255,255,0.12); stroke-width: 1; } .svg-dot { fill: rgba(255,187,0,0.5); animation: twinkle 3s ease-in-out infinite; } .svg-dot-1 { animation-delay: 0s; } .svg-dot-2 { animation-delay: 0.6s; } .svg-dot-3 { animation-delay: 1.2s; } .svg-dot-4 { animation-delay: 1.8s; } .svg-dot-5 { animation-delay: 2.4s; } @keyframes twinkle { 0%, 100% { opacity: 0.2; r: 2px; } 50% { opacity: 0.8; r: 5px; } }' }} />
-          {/* SVG Animated Background */}
-          <svg
-            className="absolute inset-0 w-full h-full opacity-30"
-            viewBox="0 0 1400 800"
-            preserveAspectRatio="xMidYMid slice"
-          >
-            {/* Red de líneas conectadas */}
-            <g opacity="0.4">
-              <line className="svg-line" x1="200" y1="100" x2="600" y2="300" />
-              <line className="svg-line" x1="600" y1="300" x2="1000" y2="200" />
-              <line className="svg-line" x1="1000" y1="200" x2="1200" y2="600" />
-              <line className="svg-line" x1="1200" y1="600" x2="700" y2="700" />
-              <line className="svg-line" x1="700" y1="700" x2="200" y2="500" />
-              <line className="svg-line" x1="200" y1="500" x2="800" y2="100" />
-              <line className="svg-line" x1="400" y1="400" x2="900" y2="500" />
+        {/* ═══════════════════════════════════════════════════════════
+            HERO SECTION — Fondo cósmico animado + layout IIDEA-style
+            ═══════════════════════════════════════════════════════════ */}
+        <section className="relative overflow-hidden flex items-center min-h-[600px] lg:min-h-[680px] py-10 sm:py-14 bg-[#1a0533]">
+
+          {/* ── CAPA 1: Gradiente base profundo ── */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1a0533] via-[#2d0a4e] to-[#0f0218]" />
+
+          {/* ── CAPA 2: Ondas de energía animadas (SVG) ── */}
+          <style dangerouslySetInnerHTML={{ __html: `
+            @keyframes floatWave1 { 0%,100%{transform:translateY(0) scaleX(1)} 50%{transform:translateY(-30px) scaleX(1.05)} }
+            @keyframes floatWave2 { 0%,100%{transform:translateY(0) scaleX(1)} 50%{transform:translateY(25px) scaleX(0.97)} }
+            @keyframes pulseGlow  { 0%,100%{opacity:0.18;r:3px} 50%{opacity:1;r:7px} }
+            @keyframes pulseGlowBig { 0%,100%{opacity:0.3;r:5px} 50%{opacity:0.9;r:11px} }
+            @keyframes driftLine  { 0%,100%{opacity:0.08} 50%{opacity:0.35} }
+            @keyframes spinOrb    { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+            @keyframes particleFade { 0%,100%{opacity:0} 40%,60%{opacity:0.8} }
+            .hero-wave-1{animation:floatWave1 8s ease-in-out infinite}
+            .hero-wave-2{animation:floatWave2 11s ease-in-out infinite}
+            .hero-node{animation:pulseGlow 3s ease-in-out infinite}
+            .hero-node-big{animation:pulseGlowBig 4s ease-in-out infinite}
+            .hero-line{animation:driftLine 4s ease-in-out infinite}
+            .hero-particle{animation:particleFade 5s ease-in-out infinite}
+          ` }} />
+
+          <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1400 680" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <radialGradient id="glowOrange" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#ff6b00" stopOpacity="1"/>
+                <stop offset="100%" stopColor="#ff6b00" stopOpacity="0"/>
+              </radialGradient>
+              <radialGradient id="glowOrange2" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#ff9500" stopOpacity="1"/>
+                <stop offset="100%" stopColor="#ff9500" stopOpacity="0"/>
+              </radialGradient>
+              <radialGradient id="glowPurple" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#c026d3" stopOpacity="0.9"/>
+                <stop offset="100%" stopColor="#c026d3" stopOpacity="0"/>
+              </radialGradient>
+              <radialGradient id="glowGold" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#fbbf24" stopOpacity="1"/>
+                <stop offset="100%" stopColor="#fbbf24" stopOpacity="0"/>
+              </radialGradient>
+              <filter id="blur8">
+                <feGaussianBlur stdDeviation="8"/>
+              </filter>
+              <filter id="blur20">
+                <feGaussianBlur stdDeviation="20"/>
+              </filter>
+              <filter id="blur30">
+                <feGaussianBlur stdDeviation="30"/>
+              </filter>
+              <filter id="blur4">
+                <feGaussianBlur stdDeviation="4"/>
+              </filter>
+            </defs>
+
+            {/* Orbes de luz de fondo — más intensos */}
+            <ellipse className="hero-wave-1" cx="180" cy="180" rx="380" ry="260" fill="url(#glowOrange)" filter="url(#blur30)" opacity="0.75"/>
+            <ellipse className="hero-wave-2" cx="1250" cy="500" rx="320" ry="230" fill="url(#glowPurple)" filter="url(#blur20)" opacity="0.7"/>
+            <ellipse className="hero-wave-1" cx="700" cy="300" rx="250" ry="160" fill="url(#glowOrange2)" filter="url(#blur20)" opacity="0.4" style={{animationDelay:'2s'}}/>
+            <ellipse className="hero-wave-2" cx="90" cy="560" rx="220" ry="170" fill="url(#glowPurple)" filter="url(#blur20)" opacity="0.55" style={{animationDelay:'3s'}}/>
+            <ellipse className="hero-wave-1" cx="1350" cy="80" rx="280" ry="200" fill="url(#glowOrange)" filter="url(#blur20)" opacity="0.5" style={{animationDelay:'5s'}}/>
+            <ellipse cx="550" cy="600" rx="180" ry="120" fill="url(#glowOrange2)" filter="url(#blur20)" opacity="0.35"/>
+
+            {/* Ondas de energía naranjas — bezier curves al estilo referencia */}
+            <path className="hero-wave-1" d="M-50 350 C200 100, 500 500, 750 200 S1100 50, 1450 300"
+              stroke="url(#glowOrange)" strokeWidth="80" fill="none" opacity="0.18" filter="url(#blur20)"/>
+            <path className="hero-wave-2" d="M-50 500 C150 250, 450 600, 700 350 S1050 150, 1450 450"
+              stroke="#ff6b00" strokeWidth="50" fill="none" opacity="0.14" filter="url(#blur20)" style={{animationDelay:'2s'}}/>
+            <path className="hero-wave-1" d="M300 -50 C400 200, 200 400, 500 500 S700 650, 600 750"
+              stroke="#ff9500" strokeWidth="60" fill="none" opacity="0.12" filter="url(#blur20)" style={{animationDelay:'4s'}}/>
+            <path className="hero-wave-2" d="M900 -20 C1000 150, 800 350, 1100 400 S1300 500, 1500 350"
+              stroke="url(#glowOrange2)" strokeWidth="70" fill="none" opacity="0.16" filter="url(#blur20)" style={{animationDelay:'6s'}}/>
+
+            {/* Red de constelaciones — líneas */}
+            <g opacity="1">
+              {/* triángulo superior izquierdo */}
+              <line className="hero-line" x1="120" y1="80"  x2="380" y2="200" stroke="#ff9500" strokeWidth="1.2" style={{animationDelay:'0s'}}/>
+              <line className="hero-line" x1="380" y1="200" x2="220" y2="380" stroke="#ff9500" strokeWidth="1" style={{animationDelay:'0.5s'}}/>
+              <line className="hero-line" x1="220" y1="380" x2="120" y2="80"  stroke="#ff9500" strokeWidth="0.8" style={{animationDelay:'1s'}}/>
+              {/* brazos izquierda */}
+              <line className="hero-line" x1="380" y1="200" x2="580" y2="150" stroke="#ff9500" strokeWidth="1" style={{animationDelay:'0.3s'}}/>
+              <line className="hero-line" x1="380" y1="200" x2="490" y2="390" stroke="#c084fc" strokeWidth="0.9" style={{animationDelay:'0.8s'}}/>
+              {/* centro */}
+              <line className="hero-line" x1="580" y1="150" x2="750" y2="260" stroke="#ff9500" strokeWidth="1.1" style={{animationDelay:'0.2s'}}/>
+              <line className="hero-line" x1="750" y1="260" x2="490" y2="390" stroke="#c084fc" strokeWidth="0.8" style={{animationDelay:'1.2s'}}/>
+              <line className="hero-line" x1="750" y1="260" x2="980" y2="180" stroke="#ff9500" strokeWidth="1.2" style={{animationDelay:'0.6s'}}/>
+              {/* derecha */}
+              <line className="hero-line" x1="980" y1="180" x2="1150" y2="300" stroke="#ff9500" strokeWidth="1" style={{animationDelay:'1.5s'}}/>
+              <line className="hero-line" x1="1150" y1="300" x2="1280" y2="160" stroke="#c084fc" strokeWidth="0.9" style={{animationDelay:'0.4s'}}/>
+              <line className="hero-line" x1="1280" y1="160" x2="980"  y2="180" stroke="#ff9500" strokeWidth="0.8" style={{animationDelay:'1.1s'}}/>
+              {/* inferior */}
+              <line className="hero-line" x1="490" y1="390" x2="680" y2="530" stroke="#c084fc" strokeWidth="1" style={{animationDelay:'0.7s'}}/>
+              <line className="hero-line" x1="680" y1="530" x2="900" y2="460" stroke="#ff9500" strokeWidth="0.9" style={{animationDelay:'1.3s'}}/>
+              <line className="hero-line" x1="900" y1="460" x2="1150" y2="300" stroke="#c084fc" strokeWidth="1" style={{animationDelay:'0.9s'}}/>
+              <line className="hero-line" x1="680" y1="530" x2="220" y2="380" stroke="#ff9500" strokeWidth="0.7" style={{animationDelay:'2s'}}/>
             </g>
 
-            {/* Puntos brillantes animados */}
-            <circle className="svg-dot svg-dot-1" cx="200" cy="100" r="3" />
-            <circle className="svg-dot svg-dot-2" cx="600" cy="300" r="3" />
-            <circle className="svg-dot svg-dot-3" cx="1000" cy="200" r="3" />
-            <circle className="svg-dot svg-dot-4" cx="700" cy="700" r="3" />
-            <circle className="svg-dot svg-dot-5" cx="1200" cy="600" r="3" />
+            {/* Nodos brillantes principales */}
+            <g>
+              {([
+                [120,80,8,'#ff9500',0],  [380,200,12,'#ffb733',0.3], [220,380,8,'#ff6b00',0.8],
+                [580,150,10,'#fbbf24',0.5], [750,260,14,'#ff9500',1.0], [490,390,9,'#c084fc',0.2],
+                [980,180,11,'#ffb733',0.7], [1150,300,13,'#ff9500',0.4], [1280,160,8,'#c084fc',1.2],
+                [680,530,10,'#ff6b00',0.6], [900,460,9,'#fbbf24',1.5], [120,80,0,'',0],
+              ] as [number,number,number,string,number][]).filter(n=>n[2]>0).map(([cx,cy,r,color,delay],i) => (
+                <g key={i}>
+                  {/* halo */}
+                  <circle cx={cx} cy={cy} r={r*3} fill={color} filter="url(#blur8)" opacity="0.4"
+                    style={{animation:`pulseGlow ${3+i*0.3}s ease-in-out infinite`, animationDelay:`${delay}s`}}/>
+                  {/* núcleo */}
+                  <circle cx={cx} cy={cy} r={r===14?7:r===12?5:r===13?6:4} fill={color}
+                    className="hero-node" style={{animationDelay:`${delay}s`}}/>
+                  {/* punto central blanco */}
+                  <circle cx={cx} cy={cy} r="1.5" fill="white" opacity="0.9"/>
+                </g>
+              ))}
+            </g>
+
+            {/* Partículas dispersas */}
+            {([
+              [60,320,2],[170,490,1.5],[320,580,2],[450,100,1.5],[600,470,2],
+              [780,80,1.5],[830,590,2],[1050,420,1.5],[1200,540,2],[1350,380,1.5],
+              [1050,60,2],[330,280,1.5],[950,580,2],[1300,440,1.5],
+            ] as [number,number,number][]).map(([cx,cy,r],i)=>(
+              <circle key={i} cx={cx} cy={cy} r={r} fill="#fbbf24" opacity="0.6"
+                className="hero-particle" style={{animationDelay:`${(i*0.7)%5}s`}}/>
+            ))}
           </svg>
 
-          {/* Decorative gradient orbs */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-3xl -z-10" />
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange-500/20 rounded-full blur-3xl -z-10" />
+          {/* ── CAPA 3: Contenido ── */}
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center mb-6">
-              {/* Contenido izquierdo */}
-              <div className="space-y-4 z-10">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-xs font-bold text-white">
-                  <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-                  Nuevo Curso 🚀 Exclusivo para Estudiantes IIDEA
+              {/* ─── Columna izquierda: Texto + CTAs ─── */}
+              <div className="space-y-6">
+                {/* Badge */}
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-400/40 bg-orange-500/10 backdrop-blur-sm text-xs font-bold text-orange-300 shadow-lg shadow-orange-900/20">
+                  <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse shadow-sm shadow-orange-400" />
+                  Nuevo Curso · Exclusivo para Estudiantes IIDEA
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-display leading-tight">
-                  Potencia tus Habilidades con SAP Finix
+                {/* Título */}
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-display leading-[1.1]">
+                  Potencia tus{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-300">
+                    Habilidades
+                  </span>{' '}
+                  con SAP Finix
                 </h1>
 
-                <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-lg">
-                  IIDEA te presenta acceso exclusivo a nuestro simulador SAP Finix. Aprende procesos empresariales, realiza prácticas en laboratorio y prepárate para triunfar en tu carrera profesional.
+                {/* Subtítulo */}
+                <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-md">
+                  IIDEA te presenta acceso exclusivo al simulador SAP Finix. Aprende procesos empresariales reales y prepárate para tu carrera profesional.
                 </p>
 
                 {/* CTAs */}
-                <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                <div className="flex flex-wrap gap-3 pt-1">
                   <Link
                     href="/capacitacion"
-                    className="px-8 py-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 text-white font-bold text-sm sm:text-base hover:bg-white/30 transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-sm hover:from-orange-400 hover:to-amber-400 transition-all shadow-xl shadow-orange-500/30 active:scale-95"
                   >
-                    <Award className="w-5 h-5" />
+                    <Award className="w-4 h-4" />
                     Explorar rutas
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     href="/mi-aula"
-                    className="px-8 py-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 text-white font-bold text-sm sm:text-base hover:bg-white/30 transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-sm hover:bg-white/20 transition-all shadow-lg active:scale-95"
                   >
-                    <GraduationCap className="w-5 h-5" />
+                    <GraduationCap className="w-4 h-4" />
                     Mi Aula Virtual
                   </Link>
                 </div>
-
-                {/* Stats — dentro del hero, debajo de los CTAs */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/20">
-                  <div>
-                    <p className="text-2xl sm:text-3xl font-extrabold text-white font-display">{SPECIALTY_DIPLOMAS.length}</p>
-                    <p className="text-xs text-white/80 mt-0.5 font-medium">Diplomas</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl sm:text-3xl font-extrabold text-white font-display">{OFFICIAL_SYLLABUS.length}</p>
-                    <p className="text-xs text-white/80 mt-0.5 font-medium">Módulos</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl sm:text-3xl font-extrabold text-white font-display">{OFFICIAL_SYLLABUS.reduce((total, module) => total + module.classes.length, 0)}</p>
-                    <p className="text-xs text-white/80 mt-0.5 font-medium">Clases guiadas</p>
-                  </div>
-                  <div>
-                    <p className="text-2xl sm:text-3xl font-extrabold text-white font-display">{new Set(OFFICIAL_SYLLABUS.map(module => module.block)).size}</p>
-                    <p className="text-xs text-white/80 mt-0.5 font-medium">Áreas temáticas</p>
-                  </div>
-                </div>
               </div>
 
-              {/* Imagen derecha */}
-              <div className="relative h-[300px] sm:h-[380px] lg:h-[450px] z-10">
+              {/* ─── Columna derecha: Imagen con Stats overlay en la parte inferior ─── */}
+              <div className="relative h-[360px] sm:h-[420px] lg:h-[480px] rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
+                {/* Foto */}
                 <Image
                   src="/hero.webp"
                   alt="IIDEA Academy - SAP Finix Training"
                   fill
-                  className="object-contain object-right drop-shadow-2xl"
+                  className="object-cover object-center"
                   priority
                 />
+                {/* Gradiente que oscurece la parte de abajo para que los stats sean legibles */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                {/* Stats — glassmorphism DENTRO de la foto, en la parte baja */}
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <div className="grid grid-cols-4 gap-2">
+                    {[
+                      { value: SPECIALTY_DIPLOMAS.length, label: 'Diplomas' },
+                      { value: OFFICIAL_SYLLABUS.length, label: 'Módulos' },
+                      { value: OFFICIAL_SYLLABUS.reduce((t,m)=>t+m.classes.length,0), label: 'Clases' },
+                      { value: new Set(OFFICIAL_SYLLABUS.map(m=>m.block)).size, label: 'Áreas' },
+                    ].map((stat, i) => (
+                      <div
+                        key={i}
+                        className="flex flex-col items-center justify-center py-2.5 px-1 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-lg"
+                      >
+                        <span className="text-xl sm:text-2xl font-extrabold text-white font-display leading-none">{stat.value}</span>
+                        <span className="text-[9px] sm:text-[11px] text-white/70 mt-0.5 font-semibold text-center leading-tight">{stat.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
+
             </div>
           </div>
         </section>
@@ -325,67 +437,77 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* IIDEA COLORED SECTION 1: Negro y Morado */}
-        <section className="py-20 bg-black dark:bg-black">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* IIDEA COLORED SECTION 1: Fondo cósmico naranja/púrpura */}
+        <section className="relative py-20 overflow-hidden bg-[#1a0533]">
+          {/* Fondo cósmico reutilizado */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#2d0a4e] via-[#1a0533] to-[#0f0218]" />
+          <svg className="absolute inset-0 w-full h-full opacity-70" viewBox="0 0 1400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <radialGradient id="adm-orange" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#ff7700" stopOpacity="1"/>
+                <stop offset="100%" stopColor="#ff7700" stopOpacity="0"/>
+              </radialGradient>
+              <radialGradient id="adm-purple" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#9333ea" stopOpacity="1"/>
+                <stop offset="100%" stopColor="#9333ea" stopOpacity="0"/>
+              </radialGradient>
+              <filter id="admBlur">
+                <feGaussianBlur stdDeviation="25"/>
+              </filter>
+            </defs>
+            <ellipse cx="150" cy="150" rx="300" ry="200" fill="url(#adm-orange)" filter="url(#admBlur)" opacity="0.6"/>
+            <ellipse cx="1250" cy="350" rx="280" ry="180" fill="url(#adm-purple)" filter="url(#admBlur)" opacity="0.6"/>
+            <ellipse cx="700" cy="250" rx="200" ry="150" fill="url(#adm-orange)" filter="url(#admBlur)" opacity="0.3"/>
+            <path d="M-50 300 C250 100, 600 400, 900 200 S1200 50, 1450 250"
+              stroke="#ff7700" strokeWidth="80" fill="none" opacity="0.12" filter="url(#admBlur)"/>
+            <path d="M200 -20 C350 150, 250 300, 500 380 S750 500, 650 520"
+              stroke="#ff9500" strokeWidth="60" fill="none" opacity="0.10" filter="url(#admBlur)"/>
+          </svg>
+
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="space-y-12">
               <div className="text-center max-w-3xl mx-auto space-y-3">
-                <span className="text-xs uppercase tracking-[0.25em] text-orange-500 font-bold">
+                <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-orange-400 font-bold">
+                  <span className="w-6 h-px bg-orange-400/60" />
                   Proceso de Admisión
+                  <span className="w-6 h-px bg-orange-400/60" />
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-display">
                   Inicia tu Carrera Profesional
                 </h2>
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p className="text-white/60 text-sm sm:text-base leading-relaxed">
                   IIDEA te guía paso a paso en tu formación empresarial con SAP Finix.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-900 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition duration-300" />
-                  <div className="relative p-8 rounded-2xl bg-gradient-to-br from-purple-700 to-purple-900 space-y-4">
-                    <div className="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center">
-                      <span className="text-3xl font-extrabold text-white font-display">1</span>
+                {[
+                  { n: '01', title: 'Solicitud', desc: 'Completa el formulario de admisión y proporciona tu información académica y profesional.' },
+                  { n: '02', title: 'Evaluación', desc: 'Nuestro equipo revisa tu perfil y te propone la ruta de especialidad más adecuada.' },
+                  { n: '03', title: 'Acceso', desc: 'Accede a tu aula virtual y comienza a dominar SAP Finix desde el primer día.' },
+                ].map((step) => (
+                  <div key={step.n} className="relative group">
+                    {/* Halo naranja en hover */}
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-orange-500/20 to-purple-700/20 blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                    <div className="relative p-8 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 group-hover:border-orange-500/30 transition-all space-y-5">
+                      {/* Número con glow */}
+                      <div className="relative w-16 h-16">
+                        <div className="absolute inset-0 rounded-full bg-orange-500 blur-md opacity-50 group-hover:opacity-80 transition-opacity" />
+                        <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center shadow-lg shadow-orange-500/40">
+                          <span className="text-xl font-extrabold text-white font-display">{step.n}</span>
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold text-white group-hover:text-orange-300 transition-colors">{step.title}</h3>
+                      <p className="text-sm text-white/60 leading-relaxed">{step.desc}</p>
                     </div>
-                    <h3 className="text-xl font-bold text-white">Solicitud</h3>
-                    <p className="text-sm text-purple-100">
-                      Completa el formulario de admisión y proporciona tu información académica y profesional.
-                    </p>
                   </div>
-                </div>
-
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-900 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition duration-300" />
-                  <div className="relative p-8 rounded-2xl bg-gradient-to-br from-purple-700 to-purple-900 space-y-4">
-                    <div className="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center">
-                      <span className="text-3xl font-extrabold text-white font-display">2</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-white">Evaluación</h3>
-                    <p className="text-sm text-purple-100">
-                      Nuestro equipo revisa tu perfil y te propone la ruta de especialidad más adecuada.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-900 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition duration-300" />
-                  <div className="relative p-8 rounded-2xl bg-gradient-to-br from-purple-700 to-purple-900 space-y-4">
-                    <div className="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center">
-                      <span className="text-3xl font-extrabold text-white font-display">3</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-white">Acceso</h3>
-                    <p className="text-sm text-purple-100">
-                      Accede a tu aula virtual y comienza a dominar SAP Finix desde el primer día.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
 
               <div className="text-center pt-4">
                 <Link
                   href="/capacitacion"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold shadow-lg shadow-orange-500/40 hover:shadow-orange-500/60 transition-all active:scale-95 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold shadow-xl shadow-orange-500/40 hover:shadow-orange-500/60 hover:from-orange-400 hover:to-amber-400 transition-all active:scale-95 cursor-pointer"
                 >
                   Solicitar Admisión
                   <ArrowRight className="w-5 h-5" />
