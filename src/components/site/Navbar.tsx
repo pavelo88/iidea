@@ -57,7 +57,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Brand Logo - IIDEA */}
         <Link href="/" className="flex items-center gap-2 sm:gap-3.5 group">
-          <div className="w-16 h-10 relative group-hover:scale-105 transition-transform flex-shrink-0">
+          <div className="w-24 h-12 relative group-hover:scale-105 transition-transform flex-shrink-0">
             <Image
               src="/logo.webp"
               alt="IIDEA Academy"
