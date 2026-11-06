@@ -70,6 +70,15 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden xl:flex items-center gap-4 text-sm font-medium text-slate-600 dark:text-slate-300">
+          <a
+            href="https://www.iidea.edu.ec/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex min-h-[44px] items-center gap-1.5 px-4 py-2 rounded-lg border-b-2 border-orange-500 text-orange-500 dark:text-orange-400 font-bold hover:opacity-80 transition-opacity"
+          >
+            Inicio
+          </a>
+
           {navLinks.map((link) => {
             const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
             const Icon = link.icon;

@@ -76,7 +76,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-slate-700 dark:border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300">
-          <p>© {new Date().getFullYear()} IIDEA Academy. Formación profesional en SAP Business One.</p>
+          <p>© 2026 Todos los Derechos Reservados — Instituto Superior Tecnológico de Innovación y Desarrollo Empresarial Alemán — IIDEA<br /><br />Powered by SinergIA</p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <Link href="/mi-aula" className="hover:underline">Mi Aula Virtual</Link>
             <Link href="/simulador" className="hover:underline">Simulador</Link>

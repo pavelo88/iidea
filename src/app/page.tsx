@@ -283,6 +283,113 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* IIDEA COLORED SECTION 1: Negro y Morado */}
+        <section className="py-20 bg-black dark:bg-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="space-y-12">
+              <div className="text-center max-w-3xl mx-auto space-y-3">
+                <span className="text-xs uppercase tracking-[0.25em] text-orange-500 font-bold">
+                  Proceso de Admisión
+                </span>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-white font-display">
+                  Inicia tu Carrera Profesional
+                </h2>
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                  IIDEA te guía paso a paso en tu formación empresarial con SAP Finix.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-900 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition duration-300" />
+                  <div className="relative p-8 rounded-2xl bg-gradient-to-br from-purple-700 to-purple-900 space-y-4">
+                    <div className="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center">
+                      <span className="text-3xl font-extrabold text-white font-display">1</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white">Solicitud</h3>
+                    <p className="text-sm text-purple-100">
+                      Completa el formulario de admisión y proporciona tu información académica y profesional.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-900 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition duration-300" />
+                  <div className="relative p-8 rounded-2xl bg-gradient-to-br from-purple-700 to-purple-900 space-y-4">
+                    <div className="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center">
+                      <span className="text-3xl font-extrabold text-white font-display">2</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white">Evaluación</h3>
+                    <p className="text-sm text-purple-100">
+                      Nuestro equipo revisa tu perfil y te propone la ruta de especialidad más adecuada.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-900 rounded-2xl blur-xl opacity-75 group-hover:opacity-100 transition duration-300" />
+                  <div className="relative p-8 rounded-2xl bg-gradient-to-br from-purple-700 to-purple-900 space-y-4">
+                    <div className="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center">
+                      <span className="text-3xl font-extrabold text-white font-display">3</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white">Acceso</h3>
+                    <p className="text-sm text-purple-100">
+                      Accede a tu aula virtual y comienza a dominar SAP Finix desde el primer día.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-center pt-4">
+                <Link
+                  href="/capacitacion"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold shadow-lg shadow-orange-500/40 hover:shadow-orange-500/60 transition-all active:scale-95 cursor-pointer"
+                >
+                  Solicitar Admisión
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* WHITE SECTION: Beneficios */}
+        <section className="py-20 bg-white dark:bg-slate-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
+              <span className="text-xs uppercase tracking-[0.25em] text-orange-500 dark:text-orange-400 font-bold">
+                Ventajas IIDEA
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-display">
+                ¿Por qué Elegir IIDEA Academy?
+              </h2>
+              <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
+                Formación integral diseñada para profesionales que buscan dominar SAP Business One.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: Award, title: 'Certificación', desc: 'Constancias verificables de IIDEA Academy' },
+                { icon: Users, title: 'Comunidad', desc: 'Red de profesionales en formación SAP' },
+                { icon: TrendingUp, title: 'Empleabilidad', desc: 'Bolsa de empleo y oportunidades laborales' },
+                { icon: Clock, title: 'Flexible', desc: 'Aprende a tu propio ritmo' }
+              ].map((benefit, idx) => {
+                const Icon = benefit.icon;
+                return (
+                  <div key={idx} className="p-6 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.03] hover:border-orange-500 dark:hover:border-orange-500 transition-colors space-y-3">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="font-bold text-slate-900 dark:text-white">{benefit.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">{benefit.desc}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
