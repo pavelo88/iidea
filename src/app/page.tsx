@@ -59,64 +59,78 @@ export default function HomePage() {
       <Navbar />
 
       <main className="flex-1">
-        {/* HERO SECTION DE LA ESCUELA */}
-        <section className="relative pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[380px] bg-gradient-to-tr from-finix-blue/20 via-sky-500/15 to-transparent blur-3xl -z-10 pointer-events-none" />
+        {/* HERO SECTION - Nuevo diseño con imagen a la derecha */}
+        <section className="relative min-h-screen bg-gradient-to-br from-orange-500 via-orange-400 to-purple-900 dark:from-orange-600 dark:via-purple-800 dark:to-black overflow-hidden flex items-center">
+          {/* Decorative gradient orbs */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-3xl -z-10" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange-500/20 rounded-full blur-3xl -z-10" />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-            {/* Main Header */}
-            <div className="text-center max-w-4xl mx-auto space-y-6 py-4 sm:py-8">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/5 text-xs font-bold text-orange-600 dark:text-orange-400">
-                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-                Nuevo Curso 🚀 Exclusivo para Estudiantes IIDEA
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-8">
+              {/* Contenido izquierdo */}
+              <div className="space-y-6 z-10">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-xs font-bold text-white">
+                  <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                  Nuevo Curso 🚀 Exclusivo para Estudiantes IIDEA
+                </div>
+
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white font-display leading-tight">
+                  Potencia tus Habilidades con SAP Finix
+                </h1>
+
+                <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-lg">
+                  IIDEA te presenta acceso exclusivo a nuestro simulador SAP Finix. Aprende procesos empresariales, realiza prácticas en laboratorio y prepárate para triunfar en tu carrera profesional.
+                </p>
+
+                {/* CTAs */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <Link
+                    href="/capacitacion"
+                    className="px-8 py-4 rounded-2xl bg-white text-orange-600 font-bold text-sm sm:text-base shadow-xl hover:shadow-2xl transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <Award className="w-5 h-5" />
+                    Explorar rutas
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href="/mi-aula"
+                    className="px-8 py-4 rounded-2xl border-2 border-white bg-transparent text-white font-bold text-sm sm:text-base hover:bg-white/10 transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <GraduationCap className="w-5 h-5" />
+                    Mi Aula Virtual
+                  </Link>
+                </div>
               </div>
 
-              {/* H1 Exacto (45-65 chars) -> 53 caracteres */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white font-display">
-                Potencia tus Habilidades con SAP Finix
-              </h1>
-
-              <p className="text-base sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
-                IIDEA te presenta acceso exclusivo a nuestro simulador SAP Finix. Aprende procesos empresariales, realiza prácticas en laboratorio y prepárate para triunfar en tu carrera profesional.
-              </p>
-
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-                <Link
-                  href="/capacitacion"
-                  className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-sm sm:text-base shadow-xl shadow-orange-500/25 hover:shadow-orange-500/40 transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  <Award className="w-5 h-5" />
-                  Explorar rutas de formación
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/mi-aula"
-                  className="w-full sm:w-auto px-8 py-4 rounded-2xl border border-slate-300 dark:border-white/15 bg-white dark:bg-white/[0.04] text-slate-800 dark:text-white font-semibold text-sm sm:text-base hover:border-orange-500/50 transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer shadow-sm"
-                >
-                  <GraduationCap className="w-5 h-5 text-orange-500" />
-                  Ingresar a Mi Aula Virtual
-                </Link>
+              {/* Imagen derecha */}
+              <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] z-10">
+                <Image
+                  src="/hero.webp"
+                  alt="IIDEA Academy - SAP Finix Training"
+                  fill
+                  className="object-contain object-right drop-shadow-2xl"
+                  priority
+                />
               </div>
+            </div>
 
-              {/* Datos del programa */}
-              <div className="pt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center border-t border-slate-200 dark:border-white/[0.08]">
-                <div className="p-4 rounded-2xl bg-white dark:bg-white/[0.02] border border-slate-100 dark:border-white/5 shadow-sm">
-                  <p className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-display">{SPECIALTY_DIPLOMAS.length}</p>
-                  <p className="text-xs text-slate-500 mt-1 font-medium">Diplomas de Especialidad</p>
-                </div>
-                <div className="p-4 rounded-2xl bg-white dark:bg-white/[0.02] border border-slate-100 dark:border-white/5 shadow-sm">
-                  <p className="text-2xl sm:text-3xl font-extrabold text-orange-500 dark:text-orange-400 font-display">{OFFICIAL_SYLLABUS.length}</p>
-                    <p className="text-xs text-slate-500 mt-1 font-medium">Módulos de estudio</p>
-                </div>
-                <div className="p-4 rounded-2xl bg-white dark:bg-white/[0.02] border border-slate-100 dark:border-white/5 shadow-sm">
-                  <p className="text-2xl sm:text-3xl font-extrabold text-emerald-500 font-display">{OFFICIAL_SYLLABUS.reduce((total, module) => total + module.classes.length, 0)}</p>
-                  <p className="text-xs text-slate-500 mt-1 font-medium">Clases guiadas</p>
-                </div>
-                <div className="p-4 rounded-2xl bg-white dark:bg-white/[0.02] border border-slate-100 dark:border-white/5 shadow-sm">
-                  <p className="text-2xl sm:text-3xl font-extrabold text-amber-500 font-display">{new Set(OFFICIAL_SYLLABUS.map(module => module.block)).size}</p>
-                  <p className="text-xs text-slate-500 mt-1 font-medium">Áreas temáticas</p>
-                </div>
+            {/* Stats section - Abajo */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 z-10 pt-8 border-t border-white/20">
+              <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
+                <p className="text-3xl sm:text-4xl font-extrabold text-white font-display">{SPECIALTY_DIPLOMAS.length}</p>
+                <p className="text-xs sm:text-sm text-white/80 mt-2 font-medium">Diplomas de Especialidad</p>
+              </div>
+              <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
+                <p className="text-3xl sm:text-4xl font-extrabold text-white font-display">{OFFICIAL_SYLLABUS.length}</p>
+                <p className="text-xs sm:text-sm text-white/80 mt-2 font-medium">Módulos de estudio</p>
+              </div>
+              <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
+                <p className="text-3xl sm:text-4xl font-extrabold text-white font-display">{OFFICIAL_SYLLABUS.reduce((total, module) => total + module.classes.length, 0)}</p>
+                <p className="text-xs sm:text-sm text-white/80 mt-2 font-medium">Clases guiadas</p>
+              </div>
+              <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20">
+                <p className="text-3xl sm:text-4xl font-extrabold text-white font-display">{new Set(OFFICIAL_SYLLABUS.map(module => module.block)).size}</p>
+                <p className="text-xs sm:text-sm text-white/80 mt-2 font-medium">Áreas temáticas</p>
               </div>
             </div>
           </div>
