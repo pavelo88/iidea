@@ -22,7 +22,7 @@ export function Footer() {
               </div>
               <div className="flex flex-col whitespace-nowrap">
                 <span className="text-lg font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-[#ff9500] to-[#f59e0b] dark:from-white dark:via-orange-300 dark:to-[#ff9500] bg-clip-text text-transparent font-display">
-                  ACADEMY
+                  Curso SAP B1
                 </span>
                 <span className="text-[9px] tracking-wide text-slate-500 dark:text-slate-400 font-semibold">
                   Escuela de capacitación
