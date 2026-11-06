@@ -57,18 +57,14 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Brand Logo - IIDEA */}
         <Link href="/" className="flex items-center gap-2 sm:gap-3.5 group">
-          <div className="flex flex-col whitespace-nowrap">
-            <div className="flex items-baseline gap-0">
-              <span className="text-xl sm:text-2xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-[#ff9500] to-[#f59e0b] dark:from-orange-400 dark:via-orange-300 dark:to-orange-500 bg-clip-text text-transparent font-display">
-                IIDEA
-              </span>
-              <span className="text-xs sm:text-sm font-bold tracking-wide text-slate-600 dark:text-slate-300 ml-1">
-                Academy
-              </span>
-            </div>
-            <span className="text-[9px] sm:text-[10px] tracking-wide text-slate-500 dark:text-slate-400 font-semibold">
-              Escuela de capacitación
-            </span>
+          <div className="w-16 h-10 relative group-hover:scale-105 transition-transform flex-shrink-0">
+            <Image
+              src="/logo.webp"
+              alt="IIDEA Academy"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
         </Link>
 

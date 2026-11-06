@@ -5,7 +5,7 @@ import { BotonConfigurarCookies } from '@/components/legal/CookieConsent';
 
 export function Footer() {
   return (
-    <footer className="border-t border-slate-200 dark:border-white/[0.08] bg-white dark:bg-[#050811] py-14">
+    <footer className="border-t border-slate-200 dark:border-white/[0.08] bg-black dark:bg-black py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Col 1: Brand & Logo */}
@@ -24,22 +24,22 @@ export function Footer() {
                 <span className="text-lg font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-[#ff9500] to-[#f59e0b] dark:from-white dark:via-orange-300 dark:to-[#ff9500] bg-clip-text text-transparent font-display">
                   Curso SAP B1
                 </span>
-                <span className="text-[9px] tracking-wide text-slate-500 dark:text-slate-400 font-semibold">
+                <span className="text-[9px] tracking-wide text-slate-300 dark:text-slate-300 font-semibold">
                   Escuela de capacitación
                 </span>
               </div>
             </Link>
-            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+            <p className="text-xs text-slate-300 dark:text-slate-300 leading-relaxed">
               Plataforma exclusiva para estudiantes <strong>IIDEA</strong>. Domina <strong>procesos empresariales con SAP Finix</strong> a través de simulación práctica. Rutas formativas, evaluaciones y acceso a oportunidades laborales.
             </p>
           </div>
 
           {/* Col 2: Carreras */}
           <div>
-            <h4 className="text-xs uppercase tracking-wider font-bold text-slate-900 dark:text-white mb-4">
+            <h4 className="text-xs uppercase tracking-wider font-bold text-white dark:text-white mb-4">
               Explora el programa
             </h4>
-            <ul className="space-y-2.5 text-xs text-slate-500 dark:text-slate-400">
+            <ul className="space-y-2.5 text-xs text-slate-300 dark:text-slate-300">
               <li><Link href="/capacitacion" className="hover:text-orange-500">Rutas de especialidad</Link></li>
               <li><Link href="/manuales" className="hover:text-orange-500">Manuales y atlas</Link></li>
               <li><Link href="/simulador" className="hover:text-orange-500">Laboratorio ERP</Link></li>
@@ -49,10 +49,10 @@ export function Footer() {
 
           {/* Col 3: Plataforma */}
           <div>
-            <h4 className="text-xs uppercase tracking-wider font-bold text-slate-900 dark:text-white mb-4">
+            <h4 className="text-xs uppercase tracking-wider font-bold text-white dark:text-white mb-4">
               Plataforma
             </h4>
-            <ul className="space-y-2.5 text-xs text-slate-500 dark:text-slate-400">
+            <ul className="space-y-2.5 text-xs text-slate-300 dark:text-slate-300">
               <li><Link href="/mi-aula" className="hover:text-amber-500 font-bold text-amber-600 dark:text-amber-400">🎓 Mi Aula Virtual</Link></li>
               <li><Link href="/simulador" className="hover:text-orange-500">🚀 Simulador SAP Business One</Link></li>
               <li><Link href="/manuales" className="hover:text-orange-500">📖 Manuales & Atlas Visual</Link></li>
@@ -62,10 +62,10 @@ export function Footer() {
 
           {/* Col 4: Soporte */}
           <div>
-            <h4 className="text-xs uppercase tracking-wider font-bold text-slate-900 dark:text-white mb-4">
+            <h4 className="text-xs uppercase tracking-wider font-bold text-white dark:text-white mb-4">
               Admisiones & Soporte
             </h4>
-            <div className="text-xs text-slate-600 dark:text-slate-400 space-y-2.5">
+            <div className="text-xs text-slate-300 dark:text-slate-300 space-y-2.5">
               <p>¿Necesitas orientación? Explora las rutas o consulta la ayuda del sitio.</p>
               <p><Link href="/empresas#solicitud" className="text-orange-500 underline">Solicitar formación para empresas</Link></p>
               <p className="text-[11px] text-slate-500 pt-1">
@@ -75,7 +75,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-slate-100 dark:border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 border-t border-slate-700 dark:border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300">
           <p>© {new Date().getFullYear()} IIDEA Academy. Formación profesional en SAP Business One.</p>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             <Link href="/mi-aula" className="hover:underline">Mi Aula Virtual</Link>
@@ -85,7 +85,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-300">
           <nav aria-label="Información legal" className="flex flex-wrap justify-center gap-x-5 gap-y-2">
             <Link href="/privacidad" className="hover:underline">Privacidad y datos personales</Link>
             <Link href="/terminos" className="hover:underline">Términos y condiciones</Link>
