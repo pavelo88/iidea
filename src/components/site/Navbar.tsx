@@ -70,14 +70,15 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden xl:flex items-center gap-4 text-sm font-medium text-slate-600 dark:text-slate-300">
-          <a
-            href="https://www.iidea.edu.ec/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex min-h-[44px] items-center gap-1.5 px-4 py-2 rounded-lg border-b-2 border-orange-500 text-orange-500 dark:text-orange-400 font-bold hover:opacity-80 transition-opacity"
+          <Link
+            href="/"
+            className={`flex flex-col justify-center min-h-[44px] px-1 py-1 transition-colors ${pathname === '/' ? 'text-slate-900 dark:text-white font-bold' : 'text-slate-600 dark:text-slate-300 hover:text-orange-500 dark:hover:text-orange-300'}`}
           >
-            Inicio
-          </a>
+            <span>Inicio</span>
+            {pathname === '/' && (
+              <span className="h-[2.5px] rounded-full bg-gradient-to-r from-orange-400 to-purple-600 mt-0.5" />
+            )}
+          </Link>
 
           {navLinks.map((link) => {
             const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
@@ -86,24 +87,36 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`flex min-h-[44px] items-center gap-1.5 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 ${isActive
-                  ? 'text-orange-500 dark:text-orange-400 font-bold'
+                className={`flex flex-col justify-center min-h-[44px] px-1 py-1 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 ${isActive
+                  ? 'text-slate-900 dark:text-white font-bold'
                   : 'hover:text-orange-500 dark:hover:text-orange-300'
                   }`}
               >
-                <Icon className="w-4 h-4 opacity-75" />
-                <span>{link.name}</span>
+                <span className="flex items-center gap-1.5">
+                  <Icon className="w-4 h-4 opacity-75" />
+                  <span>{link.name}</span>
+                </span>
+                {isActive && (
+                  <span className="h-[2.5px] rounded-full bg-gradient-to-r from-orange-400 to-purple-600 mt-0.5" />
+                )}
               </Link>
             );
           })}
 
           {/* Ecosistema Dropdown */}
           <div className="relative group" onMouseEnter={()=>setEcosistemaOpen(true)} onMouseLeave={e=>{if(!e.currentTarget.contains(document.activeElement))setEcosistemaOpen(false);}} onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget))setEcosistemaOpen(false);}} onKeyDown={e=>{if(e.key==='Escape'){setEcosistemaOpen(false);ecosystemButton.current?.focus();}}}>
-            <button ref={ecosystemButton} aria-expanded={ecosistemaOpen} aria-controls="ecosistema-links" onClick={()=>setEcosistemaOpen(v=>!v)} className="flex min-h-[44px] items-center gap-1.5 rounded-lg transition-colors hover:text-orange-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 dark:hover:text-orange-300">
-              <Sparkles className="w-4 h-4 opacity-75" />
-              <span>Ecosistema</span>
-              <ChevronDown className="w-3 h-3 opacity-70 group-hover:rotate-180 transition-transform" />
+            {(() => { const ecosistemaActive = ecosistemaLinks.some(l => pathname === l.href || pathname.startsWith(l.href)); return (
+            <button ref={ecosystemButton} aria-expanded={ecosistemaOpen} aria-controls="ecosistema-links" onClick={()=>setEcosistemaOpen(v=>!v)} className={`flex flex-col justify-center min-h-[44px] px-1 py-1 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 ${ecosistemaActive ? 'text-slate-900 dark:text-white font-bold' : 'hover:text-orange-500 dark:hover:text-orange-300'}`}>
+              <span className="flex items-center gap-1.5">
+                <Sparkles className="w-4 h-4 opacity-75" />
+                <span>Ecosistema</span>
+                <ChevronDown className="w-3 h-3 opacity-70 group-hover:rotate-180 transition-transform" />
+              </span>
+              {ecosistemaActive && (
+                <span className="h-[2.5px] rounded-full bg-gradient-to-r from-orange-400 to-purple-600 mt-0.5" />
+              )}
             </button>
+            ); })() }
             <div id="ecosistema-links" className={"absolute top-full right-0 mt-2 w-48 transition-all duration-200 transform origin-top-right "+(ecosistemaOpen?"opacity-100 visible":"opacity-0 invisible")}>
               <div className="py-2 bg-white dark:bg-[#0b1320] rounded-xl shadow-xl border border-slate-100 dark:border-white/10 overflow-hidden relative before:absolute before:-top-4 before:left-0 before:w-full before:h-4">
                 {ecosistemaLinks.map((link) => {
