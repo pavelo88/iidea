@@ -58,10 +58,10 @@ export function Navbar() {
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2 sm:gap-3.5 group">
           <div className="w-11 h-11 relative group-hover:scale-105 transition-transform flex-shrink-0">
-            <Image src="/b1-academy-logo.webp" alt="B1" width={44} height={44} className="object-contain" priority />
+            <Image src="/logo.png" alt="IIDEA" width={44} height={44} className="object-contain" priority />
           </div>
           <div className="flex flex-col whitespace-nowrap">
-            <span className="text-base sm:text-xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-[#0a6ed1] to-sky-600 dark:from-white dark:via-sky-200 dark:to-[#0a6ed1] bg-clip-text text-transparent font-display">
+            <span className="text-base sm:text-xl font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-[#ff9500] to-[#f59e0b] dark:from-white dark:via-orange-300 dark:to-[#ff9500] bg-clip-text text-transparent font-display">
               ACADEMY
             </span>
             <span className="text-[9px] sm:text-[10px] tracking-wide text-slate-500 dark:text-slate-400 font-semibold">
@@ -79,9 +79,9 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`flex min-h-[44px] items-center gap-1.5 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-finix-blue ${isActive
-                  ? 'text-finix-blue dark:text-sky-400 font-bold'
-                  : 'hover:text-finix-blue dark:hover:text-sky-300'
+                className={`flex min-h-[44px] items-center gap-1.5 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 ${isActive
+                  ? 'text-orange-500 dark:text-orange-400 font-bold'
+                  : 'hover:text-orange-500 dark:hover:text-orange-300'
                   }`}
               >
                 <Icon className="w-4 h-4 opacity-75" />
@@ -92,7 +92,7 @@ export function Navbar() {
 
           {/* Ecosistema Dropdown */}
           <div className="relative group" onMouseEnter={()=>setEcosistemaOpen(true)} onMouseLeave={e=>{if(!e.currentTarget.contains(document.activeElement))setEcosistemaOpen(false);}} onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget))setEcosistemaOpen(false);}} onKeyDown={e=>{if(e.key==='Escape'){setEcosistemaOpen(false);ecosystemButton.current?.focus();}}}>
-            <button ref={ecosystemButton} aria-expanded={ecosistemaOpen} aria-controls="ecosistema-links" onClick={()=>setEcosistemaOpen(v=>!v)} className="flex min-h-[44px] items-center gap-1.5 rounded-lg transition-colors hover:text-finix-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-finix-blue dark:hover:text-sky-300">
+            <button ref={ecosystemButton} aria-expanded={ecosistemaOpen} aria-controls="ecosistema-links" onClick={()=>setEcosistemaOpen(v=>!v)} className="flex min-h-[44px] items-center gap-1.5 rounded-lg transition-colors hover:text-orange-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 dark:hover:text-orange-300">
               <Sparkles className="w-4 h-4 opacity-75" />
               <span>Ecosistema</span>
               <ChevronDown className="w-3 h-3 opacity-70 group-hover:rotate-180 transition-transform" />

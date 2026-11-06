@@ -38,8 +38,8 @@ import {
 } from '@/lib/curriculum-data';
 
 export const metadata = {
-  title: 'Capacitación Práctica en SAP Business One | B1 Academy',
-  description: 'Aprende procesos empresariales con clases guiadas, manuales y un simulador educativo. Rutas de formación individual y capacitación para equipos en Ecuador.',
+  title: 'Nuevo Curso SAP Finix | IIDEA Academy - Potencia tus Habilidades',
+  description: 'Acceso exclusivo para estudiantes IIDEA. Simulador SAP Finix con procesos empresariales, clases guiadas y laboratorio de práctica. Prepárate para la vida profesional.',
 };
 
 const BLOCK_ICONS: Record<SyllabusBlock, typeof Building2> = {
@@ -66,25 +66,25 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             {/* Main Header */}
             <div className="text-center max-w-4xl mx-auto space-y-6 py-4 sm:py-8">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-finix-blue/30 bg-finix-blue/5 text-xs font-bold text-finix-blue dark:text-sky-300">
-                <span className="w-2 h-2 rounded-full bg-finix-blue animate-pulse" />
-                Academia Tecnológica B2B / B2C • B1 Academy Ecuador
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/5 text-xs font-bold text-orange-600 dark:text-orange-400">
+                <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+                Nuevo Curso 🚀 Exclusivo para Estudiantes IIDEA
               </div>
 
               {/* H1 Exacto (45-65 chars) -> 53 caracteres */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white font-display">
-                Capacitación Práctica en SAP Business One
+                Potencia tus Habilidades con SAP Finix
               </h1>
 
               <p className="text-base sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
-                Aprende procesos empresariales con clases guiadas y un laboratorio de práctica. Elige una ruta por función y avanza a tu ritmo.
+                IIDEA te presenta acceso exclusivo a nuestro simulador SAP Finix. Aprende procesos empresariales, realiza prácticas en laboratorio y prepárate para triunfar en tu carrera profesional.
               </p>
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
                 <Link
                   href="/capacitacion"
-                  className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-finix-blue to-sky-600 text-white font-bold text-sm sm:text-base shadow-xl shadow-finix-blue/25 hover:shadow-finix-blue/40 transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold text-sm sm:text-base shadow-xl shadow-orange-500/25 hover:shadow-orange-500/40 transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Award className="w-5 h-5" />
                   Explorar rutas de formación
@@ -92,9 +92,9 @@ export default function HomePage() {
                 </Link>
                 <Link
                   href="/mi-aula"
-                  className="w-full sm:w-auto px-8 py-4 rounded-2xl border border-slate-300 dark:border-white/15 bg-white dark:bg-white/[0.04] text-slate-800 dark:text-white font-semibold text-sm sm:text-base hover:border-finix-blue/50 transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                  className="w-full sm:w-auto px-8 py-4 rounded-2xl border border-slate-300 dark:border-white/15 bg-white dark:bg-white/[0.04] text-slate-800 dark:text-white font-semibold text-sm sm:text-base hover:border-orange-500/50 transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer shadow-sm"
                 >
-                  <GraduationCap className="w-5 h-5 text-finix-blue" />
+                  <GraduationCap className="w-5 h-5 text-orange-500" />
                   Ingresar a Mi Aula Virtual
                 </Link>
               </div>
@@ -106,7 +106,7 @@ export default function HomePage() {
                   <p className="text-xs text-slate-500 mt-1 font-medium">Diplomas de Especialidad</p>
                 </div>
                 <div className="p-4 rounded-2xl bg-white dark:bg-white/[0.02] border border-slate-100 dark:border-white/5 shadow-sm">
-                  <p className="text-2xl sm:text-3xl font-extrabold text-finix-blue dark:text-sky-400 font-display">{OFFICIAL_SYLLABUS.length}</p>
+                  <p className="text-2xl sm:text-3xl font-extrabold text-orange-500 dark:text-orange-400 font-display">{OFFICIAL_SYLLABUS.length}</p>
                     <p className="text-xs text-slate-500 mt-1 font-medium">Módulos de estudio</p>
                 </div>
                 <div className="p-4 rounded-2xl bg-white dark:bg-white/[0.02] border border-slate-100 dark:border-white/5 shadow-sm">
@@ -126,14 +126,14 @@ export default function HomePage() {
         <section id="diplomas" className="py-20 bg-slate-100/70 dark:bg-white/[0.01] border-y border-slate-200 dark:border-white/[0.06]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div className="text-center max-w-3xl mx-auto space-y-3">
-              <span className="text-xs uppercase tracking-[0.25em] text-finix-blue dark:text-sky-400 font-bold">
-                Estructura Profesional
+              <span className="text-xs uppercase tracking-[0.25em] text-orange-600 dark:text-orange-400 font-bold">
+                Especialidades Profesionales
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-display">
-                 Encuentra una ruta para tu trabajo
+                 Elige tu ruta de aprendizaje
               </h2>
               <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
-                 Empieza por la función que necesitas practicar. El catálogo completo reúne 14 rutas de especialidad.
+                 Selecciona la función que deseas dominar. 14 rutas de especialidad para prepararte como profesional en SAP.
               </p>
             </div>
 
