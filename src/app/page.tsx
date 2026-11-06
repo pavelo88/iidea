@@ -60,8 +60,49 @@ export default function HomePage() {
       <Navbar />
 
       <main className="flex-1">
-        {/* HERO SECTION - Nuevo diseño con imagen a la derecha */}
+        {/* HERO SECTION - Nuevo diseño con imagen a la derecha + Animated Background */}
         <section className="relative bg-gradient-to-br from-orange-500 via-orange-400 to-purple-900 dark:from-orange-600 dark:via-purple-800 dark:to-black overflow-hidden flex items-center min-h-fit py-8 sm:py-12">
+          {/* SVG Animated Background */}
+          <svg
+            className="absolute inset-0 w-full h-full opacity-30"
+            viewBox="0 0 1400 800"
+            preserveAspectRatio="xMidYMid slice"
+          >
+            <defs>
+              <style>{`
+                @keyframes twinkle {
+                  0%, 100% { opacity: 0.2; r: 2; }
+                  50% { opacity: 0.8; r: 5; }
+                }
+                .line { stroke: rgba(255,255,255,0.12); stroke-width: 1; }
+                .dot { fill: rgba(255,187,0,0.5); animation: twinkle 3s ease-in-out infinite; }
+                .dot-1 { animation-delay: 0s; }
+                .dot-2 { animation-delay: 0.6s; }
+                .dot-3 { animation-delay: 1.2s; }
+                .dot-4 { animation-delay: 1.8s; }
+                .dot-5 { animation-delay: 2.4s; }
+              `}</style>
+            </defs>
+
+            {/* Red de líneas conectadas */}
+            <g opacity="0.4">
+              <line className="line" x1="200" y1="100" x2="600" y2="300" />
+              <line className="line" x1="600" y1="300" x2="1000" y2="200" />
+              <line className="line" x1="1000" y1="200" x2="1200" y2="600" />
+              <line className="line" x1="1200" y1="600" x2="700" y2="700" />
+              <line className="line" x1="700" y1="700" x2="200" y2="500" />
+              <line className="line" x1="200" y1="500" x2="800" y2="100" />
+              <line className="line" x1="400" y1="400" x2="900" y2="500" />
+            </g>
+
+            {/* Puntos brillantes animados */}
+            <circle className="dot dot-1" cx="200" cy="100" r="3" />
+            <circle className="dot dot-2" cx="600" cy="300" r="3" />
+            <circle className="dot dot-3" cx="1000" cy="200" r="3" />
+            <circle className="dot dot-4" cx="700" cy="700" r="3" />
+            <circle className="dot dot-5" cx="1200" cy="600" r="3" />
+          </svg>
+
           {/* Decorative gradient orbs */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-3xl -z-10" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange-500/20 rounded-full blur-3xl -z-10" />
@@ -369,7 +410,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* WHITE SECTION: Beneficios */}
+{/* WHITE SECTION: Beneficios */}
         <section className="py-20 bg-white dark:bg-slate-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
