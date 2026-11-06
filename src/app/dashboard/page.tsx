@@ -108,7 +108,9 @@ export default function StudentDashboardPage() {
 
   if (authLoading || !userProfile || requiresPasswordChange(userProfile)) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-[#080d1a]">
+      <div className="min-h-screen flex items-center justify-center relative isolate overflow-hidden bg-gradient-to-br from-orange-100/70 via-white to-purple-100/70 dark:bg-none dark:bg-[#080d1a]">
+        <div aria-hidden="true" className="pointer-events-none absolute -z-10 -top-32 -left-24 h-[480px] w-[480px] rounded-full bg-orange-300/40 blur-[110px] dark:bg-orange-500/10" />
+        <div aria-hidden="true" className="pointer-events-none absolute -z-10 top-1/3 -right-32 h-[420px] w-[420px] rounded-full bg-violet-300/35 blur-[110px] dark:bg-purple-700/15" />
         <div className="flex flex-col items-center gap-3 text-slate-500">
           <div className="w-10 h-10 rounded-full border-2 border-finix-blue border-t-transparent animate-spin" />
           <p className="text-xs font-mono">Cargando expediente académico...</p>
@@ -169,7 +171,9 @@ export default function StudentDashboardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#080d1a] text-slate-900 dark:text-slate-100 flex flex-col font-sans transition-colors">
+    <div className="min-h-screen relative isolate overflow-hidden bg-gradient-to-br from-orange-100/70 via-white to-purple-100/70 dark:bg-none dark:bg-[#080d1a] text-slate-900 dark:text-slate-100 flex flex-col font-sans transition-colors">
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 -top-32 -left-24 h-[480px] w-[480px] rounded-full bg-orange-300/40 blur-[110px] dark:bg-orange-500/10" />
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 top-1/3 -right-32 h-[420px] w-[420px] rounded-full bg-violet-300/35 blur-[110px] dark:bg-purple-700/15" />
       <Navbar />
 
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
@@ -177,7 +181,7 @@ export default function StudentDashboardPage() {
         {/* HEADER BRANDING */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-white/10">
           <div>
-            <div className="flex items-center gap-2 text-xs font-mono text-finix-blue dark:text-sky-400 font-bold mb-1 uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-xs font-mono text-finix-blue dark:text-orange-400 font-bold mb-1 uppercase tracking-wider">
               <span>FINIX ACADEMY</span>
               <span>•</span>
               <span>EXPEDIENTE ACADÉMICO Y ACREDITACIONES</span>
@@ -190,7 +194,7 @@ export default function StudentDashboardPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/dashboard/calificaciones"
-              className="px-4 py-2.5 rounded-xl text-xs font-bold bg-finix-blue text-white shadow-md hover:bg-sky-600 flex items-center gap-2 transition-all cursor-pointer active:scale-95"
+              className="px-4 py-2.5 rounded-xl text-xs font-bold bg-finix-blue text-white shadow-md hover:bg-purple-600 flex items-center gap-2 transition-all cursor-pointer active:scale-95"
             >
               <Award className="w-4 h-4" /> Boletín de Calificaciones
             </Link>
@@ -448,7 +452,7 @@ export default function StudentDashboardPage() {
         {/* ── SECCIÓN 2: 14 DIPLOMAS DE ESPECIALIZACIÓN PROFESIONAL POR ROL ────── */}
         <section aria-labelledby="diplomas-heading" className="space-y-4">
           <div>
-            <span className="text-xs font-mono font-bold text-finix-blue dark:text-sky-400 uppercase tracking-widest">ESPECIALIZACIÓN PROFESIONAL (14 DIPLOMAS)</span>
+            <span className="text-xs font-mono font-bold text-finix-blue dark:text-orange-400 uppercase tracking-widest">ESPECIALIZACIÓN PROFESIONAL (14 DIPLOMAS)</span>
             <h2 id="diplomas-heading" className="text-2xl font-extrabold text-slate-900 dark:text-white font-display">
               Diplomas por Rol & Carrera Profesional
             </h2>
@@ -494,7 +498,7 @@ export default function StudentDashboardPage() {
                     <Link
                       href={`/verificar/${certCode}`}
                       target="_blank"
-                      className="text-[11px] font-bold text-finix-blue dark:text-sky-400 hover:underline flex items-center gap-1"
+                      className="text-[11px] font-bold text-finix-blue dark:text-orange-400 hover:underline flex items-center gap-1"
                     >
                       <ExternalLink className="w-3 h-3" /> Verificar
                     </Link>
@@ -546,7 +550,7 @@ export default function StudentDashboardPage() {
 
                     return (
                       <tr key={mod.id} className="hover:bg-slate-50 dark:hover:bg-white/[0.02] transition-colors">
-                        <td className="px-4 py-3.5 font-bold font-mono text-finix-blue dark:text-sky-400">
+                        <td className="px-4 py-3.5 font-bold font-mono text-finix-blue dark:text-orange-400">
                           M0{mod.number}
                         </td>
                         <td className="px-4 py-3.5">
@@ -573,7 +577,7 @@ export default function StudentDashboardPage() {
                             </Link>
                             <button
                               onClick={() => handleDownloadPdf('micro', mod.certificateTitle, certCode, 20)}
-                              className="px-3 py-1 rounded bg-finix-blue hover:bg-sky-600 text-white font-bold text-[11px] shadow transition-all active:scale-95 flex items-center gap-1 cursor-pointer"
+                              className="px-3 py-1 rounded bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-400 hover:to-purple-500 text-white font-bold text-[11px] shadow transition-all active:scale-95 flex items-center gap-1 cursor-pointer"
                             >
                               <Download className="w-3 h-3" /> PDF
                             </button>
@@ -607,7 +611,7 @@ export default function StudentDashboardPage() {
 
               return (
                 <div key={blockName} className="space-y-3">
-                  <h3 className="text-sm font-extrabold uppercase font-mono tracking-wider text-finix-blue dark:text-sky-400 flex items-center gap-2 border-b border-slate-200 dark:border-white/10 pb-2">
+                  <h3 className="text-sm font-extrabold uppercase font-mono tracking-wider text-finix-blue dark:text-orange-400 flex items-center gap-2 border-b border-slate-200 dark:border-white/10 pb-2">
                     <Layers className="w-4 h-4 text-amber-500" />
                     <span>{blockName} ({modulesInBlock.length} Módulos)</span>
                   </h3>
@@ -643,7 +647,7 @@ export default function StudentDashboardPage() {
                           </span>
                           <Link
                             href={`/mi-aula/${mod.id}`}
-                            className="text-xs font-bold text-finix-blue dark:text-sky-400 hover:underline flex items-center gap-1"
+                            className="text-xs font-bold text-finix-blue dark:text-orange-400 hover:underline flex items-center gap-1"
                           >
                             Ir a Aula <ChevronRight className="w-3.5 h-3.5" />
                           </Link>

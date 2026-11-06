@@ -13,11 +13,13 @@ export const metadata: Metadata = {
 
 export default function ConsultoresPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#080d1a] text-slate-900 dark:text-white">
+    <div className="min-h-screen flex flex-col relative isolate overflow-hidden bg-gradient-to-br from-orange-100/70 via-white to-purple-100/70 dark:bg-none dark:bg-[#080d1a] text-slate-900 dark:text-white">
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 -top-32 -left-24 h-[480px] w-[480px] rounded-full bg-orange-300/40 blur-[110px] dark:bg-orange-500/10" />
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 top-1/3 -right-32 h-[420px] w-[420px] rounded-full bg-violet-300/35 blur-[110px] dark:bg-purple-700/15" />
       <Navbar />
       <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-16 sm:px-6 lg:px-8">
         <div className="max-w-2xl space-y-5">
-          <span className="inline-flex items-center gap-2 rounded-full border border-sky-500/30 px-3 py-1 text-xs font-bold text-finix-blue dark:text-sky-300"><BadgeCheck className="h-4 w-4" /> Verificación de IIDEA Academy</span>
+          <span className="inline-flex items-center gap-2 rounded-full border border-orange-300/70 dark:border-orange-500/30 px-3 py-1 text-xs font-bold text-finix-blue dark:text-orange-300"><BadgeCheck className="h-4 w-4" /> Verificación de IIDEA Academy</span>
           <h1 className="font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Comprueba una constancia antes de confiar en ella</h1>
           <p className="text-base leading-relaxed text-slate-600 dark:text-slate-300">Si una persona te presenta una constancia emitida por IIDEA Academy, usa el código impreso para consultar su autenticidad. La consulta confirma el documento; no sustituye una entrevista ni acredita experiencia laboral externa.</p>
           <Link href="/verificar" className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-400 hover:to-purple-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-orange-500/25 transition-all active:scale-95">Verificar por código <ArrowRight className="h-4 w-4" /></Link>

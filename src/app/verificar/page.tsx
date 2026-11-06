@@ -17,7 +17,9 @@ export default async function VerificarPage({ searchParams }: { searchParams: Pr
   if (codigo) redirect(`/verificar/${encodeURIComponent(codigo)}`);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#070b14] text-slate-900 dark:text-gray-100">
+    <div className="min-h-screen flex flex-col relative isolate overflow-hidden bg-gradient-to-br from-orange-100/70 via-white to-purple-100/70 dark:bg-none dark:bg-[#070b14] text-slate-900 dark:text-gray-100">
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 -top-32 -left-24 h-[480px] w-[480px] rounded-full bg-orange-300/40 blur-[110px] dark:bg-orange-500/10" />
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 top-1/3 -right-32 h-[420px] w-[420px] rounded-full bg-violet-300/35 blur-[110px] dark:bg-purple-700/15" />
       <Navbar />
       <main className="flex-1 w-full max-w-2xl mx-auto px-4 sm:px-6 py-10 space-y-6">
         <aside aria-label="Resumen" className="p-4 rounded-2xl border border-amber-500/30 bg-amber-500/5 text-sm text-slate-700 dark:text-slate-300">

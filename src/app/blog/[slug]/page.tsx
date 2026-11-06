@@ -27,7 +27,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   const article = getArticle(slug);
   if (!article) notFound();
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#080d1a]">
+    <div className="min-h-screen flex flex-col relative isolate overflow-hidden bg-gradient-to-br from-orange-100/70 via-white to-purple-100/70 dark:bg-none dark:bg-[#080d1a]">
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 -top-32 -left-24 h-[480px] w-[480px] rounded-full bg-orange-300/40 blur-[110px] dark:bg-orange-500/10" />
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 top-1/3 -right-32 h-[420px] w-[420px] rounded-full bg-violet-300/35 blur-[110px] dark:bg-purple-700/15" />
       <Navbar />
       <main className="flex-1 px-4 py-16 sm:px-6 max-w-3xl mx-auto w-full">
         <Link href="/blog" className="text-sm font-semibold text-finix-blue hover:underline">← Todas las guías</Link>

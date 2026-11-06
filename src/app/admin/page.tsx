@@ -91,7 +91,9 @@ export default function AdminStudentsPanel() {
   // Mostrar pantalla de carga mientras resuelve auth o redirect
   if (authLoading || !userProfile || (userProfile.role !== 'super' && userProfile.role !== 'admin')) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-[#080d1a]">
+      <div className="min-h-screen flex items-center justify-center relative isolate overflow-hidden bg-gradient-to-br from-orange-100/70 via-white to-purple-100/70 dark:bg-none dark:bg-[#080d1a]">
+        <div aria-hidden="true" className="pointer-events-none absolute -z-10 -top-32 -left-24 h-[480px] w-[480px] rounded-full bg-orange-300/40 blur-[110px] dark:bg-orange-500/10" />
+        <div aria-hidden="true" className="pointer-events-none absolute -z-10 top-1/3 -right-32 h-[420px] w-[420px] rounded-full bg-violet-300/35 blur-[110px] dark:bg-purple-700/15" />
         <div className="flex flex-col items-center gap-4 text-slate-500">
           <div className="w-10 h-10 rounded-full border-2 border-finix-blue border-t-transparent animate-spin" />
           <p className="text-xs font-mono">Verificando permisos...</p>
@@ -162,7 +164,9 @@ export default function AdminStudentsPanel() {
   const totalSuperAdmins = students.filter(s => s.role === 'super' || s.role === 'admin').length;
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#080d1a] selection:bg-finix-blue selection:text-white">
+    <div className="min-h-screen flex flex-col relative isolate overflow-hidden bg-gradient-to-br from-orange-100/70 via-white to-purple-100/70 dark:bg-none dark:bg-[#080d1a] selection:bg-orange-500 selection:text-white">
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 -top-32 -left-24 h-[480px] w-[480px] rounded-full bg-orange-300/40 blur-[110px] dark:bg-orange-500/10" />
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 top-1/3 -right-32 h-[420px] w-[420px] rounded-full bg-violet-300/35 blur-[110px] dark:bg-purple-700/15" />
       <Navbar />
 
       <main className="flex-1 py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full space-y-8">
@@ -189,7 +193,7 @@ export default function AdminStudentsPanel() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setShowCreateModal(true)}
-              className="px-5 py-3 rounded-2xl bg-finix-blue hover:bg-sky-600 text-white text-xs font-bold transition-all shadow-lg shadow-finix-blue/25 flex items-center gap-2 cursor-pointer active:scale-95"
+              className="px-5 py-3 rounded-2xl bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-400 hover:to-purple-500 text-white text-xs font-bold transition-all shadow-lg shadow-finix-blue/25 flex items-center gap-2 cursor-pointer active:scale-95"
             >
               <UserPlus className="w-4 h-4" />
               <span>Registrar Nuevo Estudiante</span>
@@ -293,8 +297,8 @@ export default function AdminStudentsPanel() {
             </div>
           </div>
 
-          <Link href="/admin/solicitudes" className="inline-block text-sky-500 underline">Ver solicitudes de empresas</Link>
-          <Link href="/admin/configuracion" className="ml-5 inline-block text-sky-500 underline">Configurar inscripciones y datos públicos</Link>
+          <Link href="/admin/solicitudes" className="inline-block text-orange-600 underline dark:text-orange-400">Ver solicitudes de empresas</Link>
+          <Link href="/admin/configuracion" className="ml-5 inline-block text-orange-600 underline dark:text-orange-400">Configurar inscripciones y datos públicos</Link>
           {/* Tabla de Estudiantes */}
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
@@ -547,7 +551,7 @@ export default function AdminStudentsPanel() {
                 <button
                   type="submit"
                   disabled={createLoading}
-                  className="px-6 py-2.5 rounded-xl bg-finix-blue hover:bg-sky-600 text-white text-xs font-bold transition-all shadow-md shadow-finix-blue/20 cursor-pointer disabled:opacity-50"
+                  className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-400 hover:to-purple-500 text-white text-xs font-bold transition-all shadow-md shadow-finix-blue/20 cursor-pointer disabled:opacity-50"
                 >
                   {createLoading ? 'Guardando en Firestore...' : 'Guardar y Activar Usuario'}
                 </button>

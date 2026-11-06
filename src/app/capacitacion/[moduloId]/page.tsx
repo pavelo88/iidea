@@ -22,7 +22,9 @@ export default async function TrackSyllabusPage({ params }: { params: Promise<{ 
 
   if (moduleItem) {
     return (
-      <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#080d1a] selection:bg-finix-blue selection:text-white">
+      <div className="min-h-screen flex flex-col relative isolate overflow-hidden bg-gradient-to-br from-orange-100/70 via-white to-purple-100/70 dark:bg-none dark:bg-[#080d1a] selection:bg-orange-500 selection:text-white">
+        <div aria-hidden="true" className="pointer-events-none absolute -z-10 -top-32 -left-24 h-[480px] w-[480px] rounded-full bg-orange-300/40 blur-[110px] dark:bg-orange-500/10" />
+        <div aria-hidden="true" className="pointer-events-none absolute -z-10 top-1/3 -right-32 h-[420px] w-[420px] rounded-full bg-violet-300/35 blur-[110px] dark:bg-purple-700/15" />
         <Navbar />
         <main className="flex-1 py-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto space-y-8 w-full">
           <div className="p-6 sm:p-8 rounded-3xl border border-finix-blue/30 bg-gradient-to-br from-finix-blue/10 via-sky-500/5 to-white dark:to-white/[0.02] shadow-sm space-y-5">
@@ -58,7 +60,7 @@ export default async function TrackSyllabusPage({ params }: { params: Promise<{ 
             <div className="pt-2">
               <Link
                 href={`/mi-aula/${moduleItem.id}`}
-                className="px-6 py-3 rounded-2xl bg-finix-blue hover:bg-sky-600 text-white font-bold text-xs shadow-md shadow-finix-blue/20 transition-all active:scale-95 inline-flex items-center gap-2 cursor-pointer"
+                className="px-6 py-3 rounded-2xl bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-400 hover:to-purple-500 text-white font-bold text-xs shadow-md shadow-finix-blue/20 transition-all active:scale-95 inline-flex items-center gap-2 cursor-pointer"
               >
                 <BookOpen className="w-4 h-4" />
                 Ingresar al Aula Virtual de este Módulo
@@ -78,7 +80,9 @@ export default async function TrackSyllabusPage({ params }: { params: Promise<{ 
     .filter((m): m is SyllabusModule => m !== undefined);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#080d1a] selection:bg-finix-blue selection:text-white">
+    <div className="min-h-screen flex flex-col relative isolate overflow-hidden bg-gradient-to-br from-orange-100/70 via-white to-purple-100/70 dark:bg-none dark:bg-[#080d1a] selection:bg-orange-500 selection:text-white">
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 -top-32 -left-24 h-[480px] w-[480px] rounded-full bg-orange-300/40 blur-[110px] dark:bg-orange-500/10" />
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 top-1/3 -right-32 h-[420px] w-[420px] rounded-full bg-violet-300/35 blur-[110px] dark:bg-purple-700/15" />
       <Navbar />
       <main className="flex-1 py-8 sm:py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-8 w-full">
         {/* BANNER DEL DIPLOMA */}

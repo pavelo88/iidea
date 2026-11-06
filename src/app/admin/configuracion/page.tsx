@@ -26,7 +26,7 @@ export default function LegalConfigurationPage() {
     try{const token=await currentUser.getIdToken();const response=await fetch('/api/admin/legal',{method:'PUT',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json'},body:JSON.stringify(details)});const body=await response.json();if(!response.ok)throw Error(body.error||'No se pudo guardar.');setReady(body.ready);setMissing(body.missing);setMessage(body.ready?'Configuración publicada. Inscripciones y solicitudes habilitadas.':'Borrador guardado. Completa los campos pendientes para habilitar la captación.');window.dispatchEvent(new Event('academy:legal-updated'));setConfirmed(false);}catch(error){setMessage(error instanceof Error?error.message:'No se pudo guardar.');}finally{setBusy(false);}
   }
   return <main className="mx-auto max-w-3xl px-4 py-10 text-slate-900 dark:text-white">
-    <Link href="/admin" className="text-sky-500 underline">Volver a administración</Link>
+    <Link href="/admin" className="text-orange-600 underline dark:text-orange-400">Volver a administración</Link>
     <h1 className="mt-5 text-3xl font-bold">Configuración para recibir inscripciones</h1>
     <section className="my-6 rounded-2xl border p-5" aria-label="Estado de captación">
       <h2 className="font-bold">{ready?'Inscripciones y solicitudes habilitadas':'Pendiente: inscripciones y solicitudes cerradas'}</h2>
@@ -39,6 +39,6 @@ export default function LegalConfigurationPage() {
       <button disabled={!confirmed||busy} className="min-h-12 rounded-xl bg-sky-600 px-6 py-3 font-bold text-white disabled:opacity-50">{busy?'Guardando…':'Guardar y publicar estos datos'}</button>
       <p role="status" className="rounded-xl p-3">{message}</p>
     </form>
-    <p className="mt-8 text-sm">El dominio también debe conectarse en el alojamiento para que funcione. Esta pantalla no configura DNS ni claves del SRI. <Link href="/privacidad" className="text-sky-500 underline">Revisar aviso publicado</Link></p>
+    <p className="mt-8 text-sm">El dominio también debe conectarse en el alojamiento para que funcione. Esta pantalla no configura DNS ni claves del SRI. <Link href="/privacidad" className="text-orange-600 underline dark:text-orange-400">Revisar aviso publicado</Link></p>
   </main>;
 }

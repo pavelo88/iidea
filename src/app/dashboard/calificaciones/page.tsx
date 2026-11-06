@@ -78,12 +78,14 @@ export default function CalificacionesPage() {
   certificates.filter(c => c.status === 'valid').forEach(c => certsByModule.set(c.moduleId, c));
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#080d1a] selection:bg-finix-blue selection:text-white">
+    <div className="min-h-screen flex flex-col relative isolate overflow-hidden bg-gradient-to-br from-orange-100/70 via-white to-purple-100/70 dark:bg-none dark:bg-[#080d1a] selection:bg-orange-500 selection:text-white">
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 -top-32 -left-24 h-[480px] w-[480px] rounded-full bg-orange-300/40 blur-[110px] dark:bg-orange-500/10" />
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 top-1/3 -right-32 h-[420px] w-[420px] rounded-full bg-violet-300/35 blur-[110px] dark:bg-purple-700/15" />
       <Navbar />
 
       <main className="flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full space-y-8">
         <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-4">
-          <Link href="/dashboard" className="inline-flex items-center gap-2 text-xs font-semibold text-finix-blue dark:text-sky-400 hover:underline">
+          <Link href="/dashboard" className="inline-flex items-center gap-2 text-xs font-semibold text-finix-blue dark:text-orange-400 hover:underline">
             <ArrowLeft className="w-4 h-4" /> Volver al Panel del Estudiante
           </Link>
           <div className="text-xs text-slate-500 font-mono">
@@ -125,7 +127,7 @@ export default function CalificacionesPage() {
                 <div key={mod.id} className="p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-50 dark:hover:bg-white/[0.01]">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-bold text-finix-blue dark:text-sky-400 px-2 py-0.5 rounded bg-finix-blue/10">
+                      <span className="text-xs font-bold text-finix-blue dark:text-orange-400 px-2 py-0.5 rounded bg-finix-blue/10">
                         M0{mod.number}
                       </span>
                       <h3 className="font-bold text-sm text-slate-900 dark:text-white">
@@ -153,7 +155,7 @@ export default function CalificacionesPage() {
                     <div className="flex flex-col gap-1.5">
                       <button
                         onClick={() => handleDownloadPdf('micro', mod.certificateTitle, certCode, 20)}
-                        className="px-3 py-1.5 rounded-lg bg-finix-blue hover:bg-sky-600 text-white font-bold text-xs shadow transition-all active:scale-95 flex items-center gap-1.5 cursor-pointer"
+                        className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-400 hover:to-purple-500 text-white font-bold text-xs shadow transition-all active:scale-95 flex items-center gap-1.5 cursor-pointer"
                       >
                         <Download className="w-3.5 h-3.5" /> PDF
                       </button>
@@ -220,7 +222,7 @@ export default function CalificacionesPage() {
                     <Link
                       href={`/verificar/${certCode}`}
                       target="_blank"
-                      className="text-xs font-semibold text-finix-blue dark:text-sky-400 hover:underline flex items-center gap-1"
+                      className="text-xs font-semibold text-finix-blue dark:text-orange-400 hover:underline flex items-center gap-1"
                     >
                       <ExternalLink className="w-3.5 h-3.5" /> Verificar en Línea
                     </Link>

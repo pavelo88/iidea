@@ -121,7 +121,9 @@ export default function SubmoduleLMSViewer({ params }: { params: Promise<{ modul
   const isCurrentCompleted = !!completedLessons[activeLessonId];
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#080d1a] selection:bg-finix-blue selection:text-white">
+    <div className="min-h-screen flex flex-col relative isolate overflow-hidden bg-gradient-to-br from-orange-100/70 via-white to-purple-100/70 dark:bg-none dark:bg-[#080d1a] selection:bg-orange-500 selection:text-white">
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 -top-32 -left-24 h-[480px] w-[480px] rounded-full bg-orange-300/40 blur-[110px] dark:bg-orange-500/10" />
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 top-1/3 -right-32 h-[420px] w-[420px] rounded-full bg-violet-300/35 blur-[110px] dark:bg-purple-700/15" />
       <Navbar />
 
       {showToast && (
@@ -209,7 +211,7 @@ export default function SubmoduleLMSViewer({ params }: { params: Promise<{ modul
                   
                   {detailedGuide.functionalOverview && (
                     <div className="pt-3 border-t border-slate-100 dark:border-white/5 space-y-2">
-                      <h4 className="text-xs font-mono font-bold text-finix-blue dark:text-sky-400 uppercase">
+                      <h4 className="text-xs font-mono font-bold text-finix-blue dark:text-orange-400 uppercase">
                         CONCEPTOS CLAVE DE LA SESIÓN
                       </h4>
                       <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -261,7 +263,7 @@ export default function SubmoduleLMSViewer({ params }: { params: Promise<{ modul
             {/* PESTAÑA 4: AUTOEVALUACIÓN */}
             {activeViewTab === 'quickcheck' && (
               <div className="space-y-4">
-                <div className="p-4 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-700 dark:text-sky-300 text-xs">
+                <div className="p-4 rounded-2xl bg-sky-500/10 border border-sky-500/20 text-sky-700 dark:text-orange-300 text-xs">
                   <strong>💡 Práctica de Autoevaluación:</strong> Responde estas preguntas para verificar tu comprensión inmediata. No afecta tu promedio académico final.
                 </div>
                 <QuickCheckQuiz questions={simulation.quickCheckQuestions} submoduleCode={activeSubmodule.code} />

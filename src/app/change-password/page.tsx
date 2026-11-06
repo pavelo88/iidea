@@ -49,7 +49,9 @@ export default function ChangePasswordPage() {
 
   if (authLoading || !userProfile) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-[#080d1a]">
+      <div className="min-h-screen flex items-center justify-center relative isolate overflow-hidden bg-gradient-to-br from-orange-100/70 via-white to-purple-100/70 dark:bg-none dark:bg-[#080d1a]">
+        <div aria-hidden="true" className="pointer-events-none absolute -z-10 -top-32 -left-24 h-[480px] w-[480px] rounded-full bg-orange-300/40 blur-[110px] dark:bg-orange-500/10" />
+        <div aria-hidden="true" className="pointer-events-none absolute -z-10 top-1/3 -right-32 h-[420px] w-[420px] rounded-full bg-violet-300/35 blur-[110px] dark:bg-purple-700/15" />
         <div className="w-10 h-10 rounded-full border-2 border-finix-blue border-t-transparent animate-spin" />
       </div>
     );
@@ -93,7 +95,9 @@ export default function ChangePasswordPage() {
   const strengthColor = ['', 'bg-rose-500', 'bg-amber-400', 'bg-emerald-500'];
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#080d1a] selection:bg-finix-blue selection:text-white">
+    <div className="min-h-screen flex flex-col relative isolate overflow-hidden bg-gradient-to-br from-orange-100/70 via-white to-purple-100/70 dark:bg-none dark:bg-[#080d1a] selection:bg-orange-500 selection:text-white">
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 -top-32 -left-24 h-[480px] w-[480px] rounded-full bg-orange-300/40 blur-[110px] dark:bg-orange-500/10" />
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 top-1/3 -right-32 h-[420px] w-[420px] rounded-full bg-violet-300/35 blur-[110px] dark:bg-purple-700/15" />
       <Navbar />
 
       <main className="flex-1 flex items-center justify-center px-4 py-16">
@@ -194,7 +198,7 @@ export default function ChangePasswordPage() {
               <button
                 type="submit"
                 disabled={submitting || !newPass || !confirmPass}
-                className="w-full py-3.5 px-4 rounded-xl bg-finix-blue hover:bg-sky-600 text-white text-xs font-bold transition-all shadow-md shadow-finix-blue/20 flex items-center justify-center gap-2 cursor-pointer active:scale-95 disabled:opacity-50"
+                className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-400 hover:to-purple-500 text-white text-xs font-bold transition-all shadow-md shadow-finix-blue/20 flex items-center justify-center gap-2 cursor-pointer active:scale-95 disabled:opacity-50"
               >
                 {submitting ? (
                   <span>Guardando contrasena...</span>
@@ -210,7 +214,7 @@ export default function ChangePasswordPage() {
               <button
                 type="button"
                 disabled={sending}
-                className="text-xs text-sky-500 hover:underline disabled:opacity-50"
+                className="text-xs text-orange-600 dark:text-orange-400 hover:underline disabled:opacity-50"
                 onClick={async () => {
                   if (currentUser?.email) {
                     setSending(true);
@@ -222,11 +226,11 @@ export default function ChangePasswordPage() {
               >
                 {sending ? 'Enviando enlace…' : '¿Prefieres recibir un enlace por correo?'}
               </button>
-              {recoveryNotice && <p role="status" className="text-xs text-sky-600 dark:text-sky-400 mt-2">{recoveryNotice}</p>}
+              {recoveryNotice && <p role="status" className="text-xs text-sky-600 dark:text-orange-400 mt-2">{recoveryNotice}</p>}
             </div>
 
             <p className="text-center text-[11px] text-slate-400">
-              <button type="button" className="text-sky-500 underline" onClick={async()=>{await logout();router.replace('/login');}}>Volver a iniciar sesión</button>
+              <button type="button" className="text-orange-600 underline dark:text-orange-400" onClick={async()=>{await logout();router.replace('/login');}}>Volver a iniciar sesión</button>
             </p>
           </div>
         </div>

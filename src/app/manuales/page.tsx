@@ -176,7 +176,9 @@ export default function ManualesLibraryPage() {
   }, [activeCategory, groupedResults]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#080d1a] selection:bg-finix-blue selection:text-white">
+    <div className="min-h-screen flex flex-col relative isolate overflow-hidden bg-gradient-to-br from-orange-100/70 via-white to-purple-100/70 dark:bg-none dark:bg-[#080d1a] selection:bg-orange-500 selection:text-white">
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 -top-32 -left-24 h-[480px] w-[480px] rounded-full bg-orange-300/40 blur-[110px] dark:bg-orange-500/10" />
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 top-1/3 -right-32 h-[420px] w-[420px] rounded-full bg-violet-300/35 blur-[110px] dark:bg-purple-700/15" />
       <Navbar />
 
       <main className="flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-10 w-full">
@@ -331,7 +333,7 @@ export default function ManualesLibraryPage() {
 
                       <Link
                         href={`/manuales/${encodeURIComponent(man.id)}`}
-                        className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-finix-blue hover:bg-sky-600 transition-colors px-3 py-1.5 rounded-lg shadow-sm active:scale-95"
+                        className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-400 hover:to-purple-500 transition-colors px-3 py-1.5 rounded-lg shadow-sm active:scale-95"
                       >
                         Abrir Clase <ArrowRight className="w-3 h-3" />
                       </Link>
@@ -630,7 +632,7 @@ export default function ManualesLibraryPage() {
 
               <Link
                 href={`/manuales/${encodeURIComponent(activeModalManual.id)}`}
-                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-finix-blue hover:bg-sky-600 text-white text-xs font-bold transition-all shadow-md shadow-finix-blue/20 flex items-center justify-center gap-2 active:scale-95"
+                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-400 hover:to-purple-500 text-white text-xs font-bold transition-all shadow-md shadow-finix-blue/20 flex items-center justify-center gap-2 active:scale-95"
               >
                 <Laptop className="w-4 h-4" /> Ir a la Clase Práctica
               </Link>

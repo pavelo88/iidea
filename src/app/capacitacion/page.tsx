@@ -47,7 +47,9 @@ export default function CapacitacionPage() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#080d1a] selection:bg-finix-blue selection:text-white">
+    <div className="min-h-screen flex flex-col relative isolate overflow-hidden bg-gradient-to-br from-orange-100/70 via-white to-purple-100/70 dark:bg-none dark:bg-[#080d1a] selection:bg-orange-500 selection:text-white">
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 -top-32 -left-24 h-[480px] w-[480px] rounded-full bg-orange-300/40 blur-[110px] dark:bg-orange-500/10" />
+      <div aria-hidden="true" className="pointer-events-none absolute -z-10 top-1/3 -right-32 h-[420px] w-[420px] rounded-full bg-violet-300/35 blur-[110px] dark:bg-purple-700/15" />
       <Navbar />
 
       <main className="flex-1 py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-12 w-full">
@@ -151,7 +153,7 @@ export default function CapacitacionPage() {
                   </span>
                   <Link
                     href={`/mi-aula`}
-                    className="px-4 py-2 rounded-xl bg-finix-blue hover:bg-sky-600 text-white text-xs font-bold transition-all active:scale-95 flex items-center gap-1 cursor-pointer"
+                    className="px-4 py-2 rounded-xl bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-400 hover:to-purple-500 text-white text-xs font-bold transition-all active:scale-95 flex items-center gap-1 cursor-pointer"
                   >
                     Explorar aula <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
@@ -165,7 +167,7 @@ export default function CapacitacionPage() {
         {/* SECCIÓN 2: MALLA CURRICULAR DE LOS 30 MÓDULOS */}
         <section className="pt-8 space-y-8 border-t border-slate-200 dark:border-white/10">
           <div className="text-center max-w-3xl mx-auto space-y-2">
-            <span className="text-xs uppercase tracking-[0.25em] text-finix-blue dark:text-sky-400 font-bold">
+            <span className="text-xs uppercase tracking-[0.25em] text-finix-blue dark:text-orange-400 font-bold">
               Plan de Estudios Completo
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white font-display">
