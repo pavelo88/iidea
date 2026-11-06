@@ -62,45 +62,30 @@ export default function HomePage() {
       <main className="flex-1">
         {/* HERO SECTION - Nuevo diseño con imagen a la derecha + Animated Background */}
         <section className="relative bg-gradient-to-br from-orange-500 via-orange-400 to-purple-900 dark:from-orange-600 dark:via-purple-800 dark:to-black overflow-hidden flex items-center min-h-fit py-8 sm:py-12">
+          <style dangerouslySetInnerHTML={{ __html: '.svg-line { stroke: rgba(255,255,255,0.12); stroke-width: 1; } .svg-dot { fill: rgba(255,187,0,0.5); animation: twinkle 3s ease-in-out infinite; } .svg-dot-1 { animation-delay: 0s; } .svg-dot-2 { animation-delay: 0.6s; } .svg-dot-3 { animation-delay: 1.2s; } .svg-dot-4 { animation-delay: 1.8s; } .svg-dot-5 { animation-delay: 2.4s; } @keyframes twinkle { 0%, 100% { opacity: 0.2; r: 2px; } 50% { opacity: 0.8; r: 5px; } }' }} />
           {/* SVG Animated Background */}
           <svg
             className="absolute inset-0 w-full h-full opacity-30"
             viewBox="0 0 1400 800"
             preserveAspectRatio="xMidYMid slice"
           >
-            <defs>
-              <style>{`
-                @keyframes twinkle {
-                  0%, 100% { opacity: 0.2; r: 2; }
-                  50% { opacity: 0.8; r: 5; }
-                }
-                .line { stroke: rgba(255,255,255,0.12); stroke-width: 1; }
-                .dot { fill: rgba(255,187,0,0.5); animation: twinkle 3s ease-in-out infinite; }
-                .dot-1 { animation-delay: 0s; }
-                .dot-2 { animation-delay: 0.6s; }
-                .dot-3 { animation-delay: 1.2s; }
-                .dot-4 { animation-delay: 1.8s; }
-                .dot-5 { animation-delay: 2.4s; }
-              `}</style>
-            </defs>
-
             {/* Red de líneas conectadas */}
             <g opacity="0.4">
-              <line className="line" x1="200" y1="100" x2="600" y2="300" />
-              <line className="line" x1="600" y1="300" x2="1000" y2="200" />
-              <line className="line" x1="1000" y1="200" x2="1200" y2="600" />
-              <line className="line" x1="1200" y1="600" x2="700" y2="700" />
-              <line className="line" x1="700" y1="700" x2="200" y2="500" />
-              <line className="line" x1="200" y1="500" x2="800" y2="100" />
-              <line className="line" x1="400" y1="400" x2="900" y2="500" />
+              <line className="svg-line" x1="200" y1="100" x2="600" y2="300" />
+              <line className="svg-line" x1="600" y1="300" x2="1000" y2="200" />
+              <line className="svg-line" x1="1000" y1="200" x2="1200" y2="600" />
+              <line className="svg-line" x1="1200" y1="600" x2="700" y2="700" />
+              <line className="svg-line" x1="700" y1="700" x2="200" y2="500" />
+              <line className="svg-line" x1="200" y1="500" x2="800" y2="100" />
+              <line className="svg-line" x1="400" y1="400" x2="900" y2="500" />
             </g>
 
             {/* Puntos brillantes animados */}
-            <circle className="dot dot-1" cx="200" cy="100" r="3" />
-            <circle className="dot dot-2" cx="600" cy="300" r="3" />
-            <circle className="dot dot-3" cx="1000" cy="200" r="3" />
-            <circle className="dot dot-4" cx="700" cy="700" r="3" />
-            <circle className="dot dot-5" cx="1200" cy="600" r="3" />
+            <circle className="svg-dot svg-dot-1" cx="200" cy="100" r="3" />
+            <circle className="svg-dot svg-dot-2" cx="600" cy="300" r="3" />
+            <circle className="svg-dot svg-dot-3" cx="1000" cy="200" r="3" />
+            <circle className="svg-dot svg-dot-4" cx="700" cy="700" r="3" />
+            <circle className="svg-dot svg-dot-5" cx="1200" cy="600" r="3" />
           </svg>
 
           {/* Decorative gradient orbs */}
@@ -142,6 +127,26 @@ export default function HomePage() {
                     Mi Aula Virtual
                   </Link>
                 </div>
+
+                {/* Stats — dentro del hero, debajo de los CTAs */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-white/20">
+                  <div>
+                    <p className="text-2xl sm:text-3xl font-extrabold text-white font-display">{SPECIALTY_DIPLOMAS.length}</p>
+                    <p className="text-xs text-white/80 mt-0.5 font-medium">Diplomas</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl sm:text-3xl font-extrabold text-white font-display">{OFFICIAL_SYLLABUS.length}</p>
+                    <p className="text-xs text-white/80 mt-0.5 font-medium">Módulos</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl sm:text-3xl font-extrabold text-white font-display">{OFFICIAL_SYLLABUS.reduce((total, module) => total + module.classes.length, 0)}</p>
+                    <p className="text-xs text-white/80 mt-0.5 font-medium">Clases guiadas</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl sm:text-3xl font-extrabold text-white font-display">{new Set(OFFICIAL_SYLLABUS.map(module => module.block)).size}</p>
+                    <p className="text-xs text-white/80 mt-0.5 font-medium">Áreas temáticas</p>
+                  </div>
+                </div>
               </div>
 
               {/* Imagen derecha */}
@@ -153,26 +158,6 @@ export default function HomePage() {
                   className="object-contain object-right drop-shadow-2xl"
                   priority
                 />
-              </div>
-            </div>
-
-            {/* Stats section - Abajo con glasmorphism */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 z-10 pt-6 border-t border-white/20">
-              <div className="p-5 sm:p-6 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/30 transition-all">
-                <p className="text-3xl sm:text-4xl font-extrabold text-white font-display">{SPECIALTY_DIPLOMAS.length}</p>
-                <p className="text-xs sm:text-sm text-white/90 mt-2 font-medium">Diplomas de Especialidad</p>
-              </div>
-              <div className="p-5 sm:p-6 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/30 transition-all">
-                <p className="text-3xl sm:text-4xl font-extrabold text-white font-display">{OFFICIAL_SYLLABUS.length}</p>
-                <p className="text-xs sm:text-sm text-white/90 mt-2 font-medium">Módulos de estudio</p>
-              </div>
-              <div className="p-5 sm:p-6 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/30 transition-all">
-                <p className="text-3xl sm:text-4xl font-extrabold text-white font-display">{OFFICIAL_SYLLABUS.reduce((total, module) => total + module.classes.length, 0)}</p>
-                <p className="text-xs sm:text-sm text-white/90 mt-2 font-medium">Clases guiadas</p>
-              </div>
-              <div className="p-5 sm:p-6 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/30 transition-all">
-                <p className="text-3xl sm:text-4xl font-extrabold text-white font-display">{new Set(OFFICIAL_SYLLABUS.map(module => module.block)).size}</p>
-                <p className="text-xs sm:text-sm text-white/90 mt-2 font-medium">Áreas temáticas</p>
               </div>
             </div>
           </div>
