@@ -43,6 +43,6 @@ th,td{border:1px solid #888;padding:4px;text-align:left}th{background:#eee}.tota
 <div class="caja"><p><b>R.U.C.:</b> ${e(p.ruc)}</p><h1>${e(sriLabels[doc.docType].toUpperCase())}</h1><p><b>No.</b> ${e(doc.number)}</p><p><b>NÚMERO DE AUTORIZACIÓN</b><br>${e(doc.claveAcceso)}</p><p>FECHA Y HORA DE AUTORIZACIÓN: ${e(doc.authorizedAt ? new Date(doc.authorizedAt).toLocaleString('es-EC', { timeZone: 'America/Guayaquil' }) : '—')}</p><p>AMBIENTE: PRUEBAS · EMISIÓN: NORMAL</p><p><b>CLAVE DE ACCESO</b></p>${codigoBarras}<p class="mono">${e(doc.claveAcceso)}</p></div></div>
 <div class="caja sep"><p><b>Razón social / Nombres:</b> ${e(socio?.name ?? doc.partnerCode)} &nbsp; <b>Identificación:</b> ${e(socio?.ruc ?? '')}</p><p><b>Fecha de emisión:</b> ${fecha(doc.date)}</p></div>
 ${cuerpo}
-<div class="caja sep"><b>Información adicional</b><p>Ejercicio académico de B1 Academy, generado en el ambiente de pruebas simulado.</p></div>
+<div class="caja sep"><b>Información adicional</b><p>Ejercicio académico de IIDEA Academy, generado en el ambiente de pruebas simulado.</p></div>
 <p class="noimp"><button onclick="print()">Imprimir / Guardar como PDF</button></p></body></html>`;
 }

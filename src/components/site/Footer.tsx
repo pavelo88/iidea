@@ -69,7 +69,7 @@ export function Footer() {
               <p>¿Necesitas orientación? Explora las rutas o consulta la ayuda del sitio.</p>
               <p><Link href="/empresas#solicitud" className="text-orange-500 underline">Solicitar formación para empresas</Link></p>
               <p className="text-[11px] text-slate-500 pt-1">
-                Formación y constancias emitidas por B1 Academy.
+                Formación y constancias emitidas por IIDEA Academy.
               </p>
             </div>
           </div>

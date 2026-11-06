@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     apple: '/icon.png',
   },
   title: {
-    default: "B1 Academy | Capacitación Práctica en SAP Business One",
-    template: "%s | B1 Academy",
+    default: "IIDEA Academy | Capacitación Práctica en SAP Business One",
+    template: "%s | IIDEA Academy",
   },
   description:
     "Formación especializada y capacitación práctica en SAP Business One para empresas y profesionales, con simulador interactivo, evaluación y certificación en español.",
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
     "Simulador contable educativo Ecuador",
     "Cursos de gestión empresarial Ecuador",
   ],
-  authors: [{ name: "B1 Academy" }],
-  creator: "B1 Academy",
-  publisher: "B1 Academy",
+  authors: [{ name: "IIDEA Academy" }],
+  creator: "IIDEA Academy",
+  publisher: "IIDEA Academy",
   formatDetection: {
     email: false,
     address: false,
@@ -52,11 +52,11 @@ export const metadata: Metadata = {
     canonical: publicUrl(),
   },
   openGraph: {
-    title: "B1 Academy | Capacitación Práctica en SAP Business One",
+    title: "IIDEA Academy | Capacitación Práctica en SAP Business One",
     description:
       "Formación especializada y capacitación práctica en SAP Business One para empresas y profesionales, con simulador interactivo, evaluación y certificación en español.",
     url: publicUrl(),
-    siteName: "B1 Academy",
+    siteName: "IIDEA Academy",
     locale: "es_ES",
     type: "website",
     images: [
@@ -64,13 +64,13 @@ export const metadata: Metadata = {
         url: publicUrl('/icon.png'),
         width: 500,
         height: 500,
-        alt: "B1 Academy - Plataforma de Capacitación y Consultoría Empresarial Finix ERP",
+        alt: "IIDEA Academy - Plataforma de Capacitación y Consultoría Empresarial Finix ERP",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "B1 Academy | Capacitación Práctica en SAP Business One",
+    title: "IIDEA Academy | Capacitación Práctica en SAP Business One",
     description:
       "Formación especializada y consultoría en Finix ERP para profesionales y empresas.",
     images: [publicUrl('/icon.png')],
@@ -93,7 +93,7 @@ const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "";
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
-  name: "B1 Academy",
+  name: "IIDEA Academy",
   url: publicUrl(),
   logo: publicUrl('/icon.png'),
   description:

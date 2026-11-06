@@ -17,7 +17,7 @@
     "syncData": [
       {
         "slide_index": 1,
-        "script_text": "¡Bienvenido a B1 Academy y a la primera lección de este módulo! SAP Business One es el sistema de planificación de recursos empresariales, o ERP, líder a nivel global para pequeñas y medianas empresas. Integra finanzas, compras, inventario, ventas y servicio en una única base de datos centralizada. Permite operar en tiempo real, eliminar la duplicidad de registros y tomar decisiones estratégicas basadas en información confiable y consistente.",
+        "script_text": "¡Bienvenido a IIDEA Academy y a la primera lección de este módulo! SAP Business One es el sistema de planificación de recursos empresariales, o ERP, líder a nivel global para pequeñas y medianas empresas. Integra finanzas, compras, inventario, ventas y servicio en una única base de datos centralizada. Permite operar en tiempo real, eliminar la duplicidad de registros y tomar decisiones estratégicas basadas en información confiable y consistente.",
         "step_guide": null
       },
       {
@@ -3905,12 +3905,12 @@
     "syncData": [
       {
         "slide_index": 1,
-        "script_text": "Clase de la escuela SAP Business One sobre la ficha del empleado y el costo laboral en Ecuador 2026. Se aprende creando la ficha de un nuevo empleado y calculando su rol de pagos con los parámetros vigentes: SBU USD 482, aporte IESS 9,45 % y patronal 12,15 %, décimos, fondos de reserva y vacaciones. Se usa el simulador de B1 Academy para practicar en ventanas reales de SAP Business One.",
+        "script_text": "Clase de la escuela SAP Business One sobre la ficha del empleado y el costo laboral en Ecuador 2026. Se aprende creando la ficha de un nuevo empleado y calculando su rol de pagos con los parámetros vigentes: SBU USD 482, aporte IESS 9,45 % y patronal 12,15 %, décimos, fondos de reserva y vacaciones. Se usa el simulador de IIDEA Academy para practicar en ventanas reales de SAP Business One.",
         "step_guide": null
       },
       {
         "slide_index": 2,
-        "script_text": "Al finalizar esta clase podrás crear la ficha maestro de un empleado en SAP Business One, calcular su rol de pagos mensual con horas extras, anticipos y beneficios legales, provisionar los costos de la empresa y generar el asiento contable correspondiente. Todo usando datos reales de B1 Center y el simulador de B1 Academy.",
+        "script_text": "Al finalizar esta clase podrás crear la ficha maestro de un empleado en SAP Business One, calcular su rol de pagos mensual con horas extras, anticipos y beneficios legales, provisionar los costos de la empresa y generar el asiento contable correspondiente. Todo usando datos reales de B1 Center y el simulador de IIDEA Academy.",
         "step_guide": null
       },
       {
@@ -4036,7 +4036,7 @@
       },
       {
         "slide_index": 11,
-        "script_text": "En esta clase aprendiste a crear la ficha maestro de un empleado en SAP Business One usando datos reales de B1 Center. Practicaste el cálculo del rol de pagos con los parámetros legales de Ecuador 2026: SBU USD 482, aporte IESS 9,45 %, patronal 12,15 %, décimos, fondos de reserva y vacaciones. Generaste el asiento contable que refleja el gasto de nómina, las cargas patronales y las provisiones de beneficios sociales, validando que debe y haber estén equilibrados. Todo usando el simulador de B1 Academy en ventanas reales de SAP Business One.",
+        "script_text": "En esta clase aprendiste a crear la ficha maestro de un empleado en SAP Business One usando datos reales de B1 Center. Practicaste el cálculo del rol de pagos con los parámetros legales de Ecuador 2026: SBU USD 482, aporte IESS 9,45 %, patronal 12,15 %, décimos, fondos de reserva y vacaciones. Generaste el asiento contable que refleja el gasto de nómina, las cargas patronales y las provisiones de beneficios sociales, validando que debe y haber estén equilibrados. Todo usando el simulador de IIDEA Academy en ventanas reales de SAP Business One.",
         "step_guide": null
       }
     ],
@@ -4059,7 +4059,7 @@
     "syncData": [
       {
         "slide_index": 1,
-        "script_text": "Clase práctica sobre el rol de pagos en Ecuador 2026: cálculo de sueldo, horas extras, décimos, fondos de reserva y su contabilización en SAP Business One mediante asientos contables. Se usa el simulador de B1 Academy con datos reales de B1 Center y los empleados E001 a E004. Se aprende haciendo: se ejecuta el rol y se genera el asiento correspondiente.",
+        "script_text": "Clase práctica sobre el rol de pagos en Ecuador 2026: cálculo de sueldo, horas extras, décimos, fondos de reserva y su contabilización en SAP Business One mediante asientos contables. Se usa el simulador de IIDEA Academy con datos reales de B1 Center y los empleados E001 a E004. Se aprende haciendo: se ejecuta el rol y se genera el asiento correspondiente.",
         "step_guide": null
       },
       {
@@ -4314,7 +4314,7 @@
     "syncData": [
       {
         "slide_index": 1,
-        "script_text": "Clase práctica sobre el rol de pagos en Ecuador 2026: cálculo de sueldo, horas extras, décimos, fondos de reserva y su contabilización en SAP Business One mediante asientos contables. Se usa el simulador de B1 Academy con datos reales de B1 Center y los empleados E001 a E004. Se aprende haciendo: se ejecuta el rol y se genera el asiento correspondiente.",
+        "script_text": "Clase práctica sobre el rol de pagos en Ecuador 2026: cálculo de sueldo, horas extras, décimos, fondos de reserva y su contabilización en SAP Business One mediante asientos contables. Se usa el simulador de IIDEA Academy con datos reales de B1 Center y los empleados E001 a E004. Se aprende haciendo: se ejecuta el rol y se genera el asiento correspondiente.",
         "step_guide": null
       },
       {
@@ -9472,7 +9472,7 @@
       },
       {
         "slide_index": 7,
-        "script_text": "En SAP Business One real también puedes definir un precio específico por unidad de medida, por ejemplo una caja de SSD a 195,00. Si desmarcas Automático, ese precio queda fijo aunque cambie el precio base de la lista. El simulador de B1 Academy maneja un precio por lista y por artículo, así que esta función se explica como concepto.",
+        "script_text": "En SAP Business One real también puedes definir un precio específico por unidad de medida, por ejemplo una caja de SSD a 195,00. Si desmarcas Automático, ese precio queda fijo aunque cambie el precio base de la lista. El simulador de IIDEA Academy maneja un precio por lista y por artículo, así que esta función se explica como concepto.",
         "step_guide": null
       },
       {
@@ -10913,7 +10913,7 @@
     "syncData": [
       {
         "slide_index": 1,
-        "script_text": "Clase de la escuela B1 Academy Ecuador sobre tarjetas de equipo y garantías en SAP Business One. Aprenderá cómo se crea y usa la tarjeta de equipo para rastrear artículos serializados, su vínculo con contratos de servicio y garantías, y su importancia en la postventa. Incluye práctica guiada en simulador para crear una tarjeta de equipo y asociarla a un artículo vendido con número de serie.",
+        "script_text": "Clase de la escuela IIDEA Academy Ecuador sobre tarjetas de equipo y garantías en SAP Business One. Aprenderá cómo se crea y usa la tarjeta de equipo para rastrear artículos serializados, su vínculo con contratos de servicio y garantías, y su importancia en la postventa. Incluye práctica guiada en simulador para crear una tarjeta de equipo y asociarla a un artículo vendido con número de serie.",
         "step_guide": null
       },
       {
@@ -15473,7 +15473,7 @@
             {
               "etiqueta": "Formato",
               "valor": "CSV separado por coma",
-              "pista": "Formato simulado para formación en B1 Academy"
+              "pista": "Formato simulado para formación en IIDEA Academy"
             }
           ]
         }
@@ -18303,7 +18303,7 @@
       },
       {
         "slide_index": 4,
-        "script_text": "Hay dos formas de calcular el ICE. La ad valorem es un porcentaje del valor: perfumes 20 por ciento y videojuegos 35 por ciento. La específica es un valor fijo por unidad: cigarrillos 0,16 dólares por cigarrillo, y el alcohol y la cerveza se calculan por litro de alcohol puro. El simulador de B1 Academy trae perfumes, videojuegos y cigarrillos.",
+        "script_text": "Hay dos formas de calcular el ICE. La ad valorem es un porcentaje del valor: perfumes 20 por ciento y videojuegos 35 por ciento. La específica es un valor fijo por unidad: cigarrillos 0,16 dólares por cigarrillo, y el alcohol y la cerveza se calculan por litro de alcohol puro. El simulador de IIDEA Academy trae perfumes, videojuegos y cigarrillos.",
         "step_guide": null
       },
       {
@@ -21616,7 +21616,7 @@
       },
       {
         "slide_index": 8,
-        "script_text": "Felicitaciones. Has culminado los módulos de Consultoría y Business Analysis de B1 Academy, integrando la metodología global con la práctica transaccional en SAP Business One. Estás preparado para defender tu conocimiento ante Master B1 y obtener tu certificación oficial con hash criptográfico.",
+        "script_text": "Felicitaciones. Has culminado los módulos de Consultoría y Business Analysis de IIDEA Academy, integrando la metodología global con la práctica transaccional en SAP Business One. Estás preparado para defender tu conocimiento ante Master B1 y obtener tu certificación oficial con hash criptográfico.",
         "step_guide": null
       }
     ],
@@ -24046,7 +24046,7 @@
       },
       {
         "slide_index": 12,
-        "script_text": "Has completado el recorrido comercial de laboratorio. La constancia de B1 Academy requiere prácticas verificadas y evaluación aprobada; no es un título oficial ni acreditación de un fabricante. Revisa los resultados pendientes antes de solicitar la evaluación oral. La preparación para un puesto real requiere también práctica supervisada y evaluación del contexto empresarial.",
+        "script_text": "Has completado el recorrido comercial de laboratorio. La constancia de IIDEA Academy requiere prácticas verificadas y evaluación aprobada; no es un título oficial ni acreditación de un fabricante. Revisa los resultados pendientes antes de solicitar la evaluación oral. La preparación para un puesto real requiere también práctica supervisada y evaluación del contexto empresarial.",
         "step_guide": null
       }
     ],

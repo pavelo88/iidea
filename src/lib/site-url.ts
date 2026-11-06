@@ -1,13 +1,13 @@
 /** Public origin used consistently by metadata, structured data and crawlers. */
 export const SITE_URL = (() => {
   const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  if (!configured) return 'https://b1-academy.vercel.app';
+  if (!configured) return 'https://iidea-academy.vercel.app';
   try {
     const url = new URL(configured);
-    if (url.protocol !== 'https:' && url.hostname !== 'localhost') return 'https://b1-academy.vercel.app';
+    if (url.protocol !== 'https:' && url.hostname !== 'localhost') return 'https://iidea-academy.vercel.app';
     return url.origin;
   } catch {
-    return 'https://b1-academy.vercel.app';
+    return 'https://iidea-academy.vercel.app';
   }
 })();
 

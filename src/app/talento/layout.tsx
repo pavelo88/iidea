@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { publicUrl } from '@/lib/site-url';
 
 export const metadata: Metadata = {
-  title: 'Talento y consultores SAP Business One en formación | B1 Academy',
+  title: 'Talento y consultores SAP Business One en formación | IIDEA Academy',
   description: 'Descubre perfiles en formación SAP Business One, sus competencias prácticas y el proceso de evaluación utilizado antes de participar en oportunidades.',
   alternates: { canonical: publicUrl('/talento') },
 };

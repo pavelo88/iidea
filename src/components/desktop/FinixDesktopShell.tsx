@@ -1062,7 +1062,7 @@ export default function FinixDesktopShell({
               <p><strong>Sociedad Activa:</strong> {companyTitle}</p>
               <p><strong>Entorno:</strong> Simulación interactiva empresarial en tiempo real con motor de doble partida contable.</p>
               <p><strong>Normativa:</strong> NIIF para PYMES y Resoluciones SRI Ecuador (Comprobantes 01, 07, ATS).</p>
-              <p><strong>Desarrollado por:</strong> B1 Academy · Plataforma de Alto Rendimiento Empresarial.</p>
+              <p><strong>Desarrollado por:</strong> IIDEA Academy · Plataforma de Alto Rendimiento Empresarial.</p>
               <div className="bg-blue-50 border border-blue-200 p-2.5 rounded text-[10.5px] text-blue-900 mt-2">
                 💡 Todas las operaciones comerciales, de inventario y tesorería impactan directamente los libros contables y financieros de su empresa en el simulador.
               </div>

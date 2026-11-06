@@ -83,7 +83,7 @@ export function VideoPlayer({
 
           <div className="flex items-center gap-3">
             <span className="text-[11px] text-slate-400 hidden sm:inline">
-              Instructor Certificado B1 Academy
+              Instructor Certificado IIDEA Academy
             </span>
             <button
               onClick={handleMarkCompleted}

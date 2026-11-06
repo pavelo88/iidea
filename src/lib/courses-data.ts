@@ -160,7 +160,7 @@ export const TRAINING_TRACKS: TrainingTrack[] = [
   {
     id: 'b1-nom-ec',
     code: 'B1-NOM-EC',
-    title: 'B1 Academy Nómina HCM: Motor Laboral & Cumplimiento (IESS/MDT)',
+    title: 'IIDEA Academy Nómina HCM: Motor Laboral & Cumplimiento (IESS/MDT)',
     shortTitle: 'B1 Nómina & IESS',
     category: 'Nómina & Legislación',
     iconName: 'Briefcase',
@@ -238,7 +238,7 @@ export const TRAINING_TRACKS: TrainingTrack[] = [
   {
     id: 'hein-hcm-talent',
     code: 'B1-HCM-TALENT',
-    title: 'B1 Academy Gestión Humana: Desarrollo Organizacional & Matriz Nine Box',
+    title: 'IIDEA Academy Gestión Humana: Desarrollo Organizacional & Matriz Nine Box',
     shortTitle: 'B1 Gestión Humana',
     category: 'Talento & Desempeño',
     iconName: 'Users',
